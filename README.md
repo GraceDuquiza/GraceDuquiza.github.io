@@ -15,3 +15,14 @@ HTML5
 CSS3
 JavaScript
 Firebase Hosting
+
+🇩🇰 Danish Vocab Trainer
+
+Danish Vocab Trainer is a Python program that helps learners practice Danish vocabulary using flashcards and quizzes.
+
+🚀 Features
+✅ Interactive flashcards and quizzes
+📈 Progress tracking
+📝 Import vocabulary from CSV files
+🛠 Tech Stack
+Python 3
