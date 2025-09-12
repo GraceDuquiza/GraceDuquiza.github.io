@@ -1,0 +1,27 @@
+{
+  "name": "graceduquiza.github.io",
+  "version": "1.0.0",
+  "description": "Portfolio",
+  "main": "script.js",
+  "scripts": {
+    "build:clean": "shx rm -rf docs && shx mkdir -p docs/assets",
+    "build:js": "esbuild script.js --bundle --minify --target=es2019 --legal-comments=none --drop:console --drop:debugger --outfile=docs/script.js",
+    "build:css": "postcss style.css -o docs/style.css",
+    "build:html": "html-minifier-terser index.html -o docs/index.html --collapse-whitespace --remove-comments --remove-redundant-attributes --remove-attribute-quotes --remove-script-type-attributes --remove-style-link-type-attributes --use-short-doctype --minify-css true",
+    "build:assets": "shx mkdir -p docs && (shx cp -r assets docs/ || true) && (shx cp icon192.png docs/ || true)",
+    "build": "npm-run-all -s build:clean build:js build:css build:html build:assets",
+    "preview": "python3 -m http.server 4321 -d docs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cssnano": "^7.1.1",
+    "esbuild": "^0.25.9",
+    "html-minifier-terser": "^7.2.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "shx": "^0.4.0"
+  }
+}
