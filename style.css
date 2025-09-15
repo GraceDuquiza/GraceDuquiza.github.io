@@ -175,7 +175,7 @@ nav.langbar.elevated{ box-shadow:0 8px 24px rgba(15,23,42,.12); }
     box-shadow:0 10px 24px rgba(15,23,42,.12);
 }
 @media (prefers-color-scheme: dark){
-  .avatar-img{ border-color:#0f172a; box-shadow:0 12px 28px rgba(0,0,0,.45); }
+    .avatar-img{ border-color:#0f172a; box-shadow:0 12px 28px rgba(0,0,0,.45); }
 }
 
 /* ---------- Prose ---------- */
