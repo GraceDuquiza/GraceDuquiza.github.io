@@ -285,16 +285,4 @@ strong{ font-weight:700; }
     #about .container{ background:linear-gradient(180deg, rgba(17,24,39,.7), rgba(17,24,39,.5)); }
 }
 
-.cv-button {
-    background-color: #486e80;
-    color: white;
-    padding: 10px 18px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: 0.2s;
-}
 
-.cv-button:hover {
-    background-color: #385e6d;
-}
