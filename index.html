@@ -41,7 +41,7 @@
         <header class="site-header">
         <div class="container">
             <!-- Primary nav in both languages + language switch on the right -->
-            <nav class="langbar" aria-label="Primary">
+        <nav class="langbar" aria-label="Primary">
             <!-- EN -->
             <ul class="nav lang lang-en">
                 <li><a href="#about">About</a></li>
@@ -50,7 +50,6 @@
                 <li><a href="https://www.linkedin.com/in/grace-duquiza-olesen-9b3005137" target="_blank" rel="noopener">LinkedIn</a></li>
                 <li><a href="https://github.com/GraceDuquiza" target="_blank" rel="noopener">GitHub</a></li>
                 <li><a href="docs/cv-viewer.html" target="_blank">View CV</a></li>
-
             </ul>
 
             <!-- DK -->
@@ -60,16 +59,15 @@
                 <li><a href="#contact">Kontakt</a></li>
                 <li><a href="https://www.linkedin.com/in/grace-duquiza-olesen-9b3005137" target="_blank" rel="noopener">LinkedIn</a></li>
                 <li><a href="https://github.com/GraceDuquiza" target="_blank" rel="noopener">GitHub</a></li>
-                <li><section id="cv" style="height: 100vh; display: flex; justify-content: center; align-items: center;">
                 <li><a href="docs/cv-viewer.html" target="_blank">View CV</a></li>
-
+            </ul>
 
             <!-- Language switch (right side) -->
-            <div class="lang-switch" role="group" aria-label="Language switcher">
-                <button id="btn-en" data-lang="en" aria-pressed="false">EN</button>
-                <button id="btn-dk" data-lang="da" aria-pressed="false">DK</button>
-            </div>
-            </nav>
+                <div class="lang-switch" role="group" aria-label="Language switcher">
+                    <button id="btn-en" data-lang="en" aria-pressed="false">EN</button>
+                    <button id="btn-dk" data-lang="da" aria-pressed="false">DK</button>
+                </div>
+        </nav>
 
             <!-- Name + photo row (below primary nav) -->
             <div class="brand-row" role="group">
@@ -226,13 +224,6 @@
                     </div>
                 </article>
 
-                <!-- Sudoku Learn -->
-                <article class="project-card" role="listitem">
-                    <header><h3>🧩 Sudoku Learn — Vanilla JS</h3></header>
-                    <p>Mobile-friendly Sudoku built with plain HTML/CSS/JS. Includes a difficulty-aware generator, notes (pencil marks), undo/redo, hints, timer, same-number highlight, numpad counters, and hardened CSP.</p>
-                    <div class="project-meta"><strong>Tech:</strong> HTML5, CSS3, JavaScript (ES6+), esbuild, html-minifier-terser, LocalStorage</div>
-                    <p class="links"><a href="https://graceduquiza.github.io/SudokuGame/" target="_blank" rel="noopener">Live Demo</a></p>
-                </article>
 
                 <!-- Siomai Cart Sarap -->
                 <article class="project-card" role="listitem">
@@ -242,6 +233,13 @@
                     <p class="links"><a href="https://siomaisarap2828.web.app/" target="_blank" rel="noopener">Live Demo</a></p>
                 </article>
 
+                <!-- Folder Tree Viewer -->
+                <article class="project-card" role="listitem">
+                    <header><h3>📁 Folder Tree Viewer</h3></header>
+                    <p>A Python tool that generates a clean Mermaid.js diagram of your project’s folder structure. It skips heavy folders like .venv and node_modules for a fast, clear overview of your codebase.</p>
+                    <div class="project-meta"><strong>Tech:</strong> Python 3, Mermaid.js, JSON, VS Code</div>
+                    <p class="links"><a href="https://github.com/GraceDuquiza/Folder_Tree_Viewer/" target="_blank" rel="noopener">GitHub Repo</a></p>
+                </article>
 
                 <!-- Danish Vocab Trainer -->
                 <article class="project-card" role="listitem">
@@ -250,9 +248,16 @@
                     <div class="project-meta"><strong>Tech:</strong> HTML, CSS, JavaScript, GitHub Pages</div>
                     <p class="links"><a href="https://graceduquiza.github.io/Danish_Vocab_Trainer/" target="_blank" rel="noopener">Live Demo</a></p>
                 </article>
+
+                <!-- Sudoku Learn -->
+                <article class="project-card" role="listitem">
+                    <header><h3>🧩 Sudoku Learn</h3></header>
+                    <p>Mobile-friendly Sudoku built with plain HTML/CSS/JS. Includes a difficulty-aware generator, notes (pencil marks), undo/redo, hints, timer, same-number highlight, numpad counters, and hardened CSP.</p>
+                    <div class="project-meta"><strong>Tech:</strong> HTML5, CSS3, JavaScript (ES6+), esbuild, html-minifier-terser, LocalStorage</div>
+                    <p class="links"><a href="https://graceduquiza.github.io/SudokuGame/" target="_blank" rel="noopener">Live Demo</a></p>
+                </article>
                 </div>
             </section>
-
             <!-- DK -->
             <section class="lang lang-da hidden">
                 <h2>Projekter</h2>
@@ -269,14 +274,6 @@
                     </div>
                 </article>
 
-                <!-- Sudoku Learn -->
-                <article class="project-card" role="listitem">
-                    <header><h3>🧩 Sudoku Learn — Vanilla JS</h3></header>
-                    <p>Mobilvenligt Sudoku bygget i ren HTML/CSS/JS. Indeholder sværhedsgradstyret generator, noter, fortryd/gør om, hints, timer, fremhævning af samme tal, numpad-tællere og stram CSP.</p>
-                    <div class="project-meta"><strong>Teknologi:</strong> HTML5, CSS3, JavaScript (ES6+), esbuild, html-minifier-terser, LocalStorage</div>
-                    <p class="links"><a href="https://graceduquiza.github.io/SudokuGame/" target="_blank" rel="noopener">Live demo</a></p>
-                </article>
-
                 <!-- Siomai Cart Sarap -->
                 <article class="project-card" role="listitem">
                     <header><h3>🥟 Siomai Cart Sarap — Online webapp</h3></header>
@@ -285,6 +282,14 @@
                         <p class="links"><a href="https://siomaisarap2828.web.app/" target="_blank" rel="noopener">Live demo</a></p>
                     </article>
 
+    
+                <!-- Folder Tree Viewer -->
+                <article class="project-card" role="listitem">
+                    <header><h3>📁 Folder Tree Viewer</h3></header>
+                    <p>Et Python-værktøj, der laver et klart Mermaid.js-diagram over projektets mappe­struktur. Det springer tunge mapper som .venv og node_modules over for et hurtigt og overskueligt overblik.</p>
+                    <div class="project-meta"><strong>Teknologi:</strong> Python 3, Mermaid.js, JSON, VS Code</div>
+                    <p class="links"><a href="https://github.com/GraceDuquiza/Folder_Tree_Viewer/" target="_blank" rel="noopener">GitHub-repo</a></p>
+                </article>
 
                 <!-- Danish Vocab Trainer -->
                 <article class="project-card" role="listitem">
@@ -292,6 +297,14 @@
                     <p>Webapp der hjælper med at styrke dansk ordforråd via interaktive flashcards og quizzer. Responsiv og nem at bruge på alle enheder.</p>
                     <div class="project-meta"><strong>Teknologi:</strong> HTML, CSS, JavaScript, GitHub Pages</div>
                     <p class="links"><a href="https://graceduquiza.github.io/Danish_Vocab_Trainer/" target="_blank" rel="noopener">Live demo</a></p>
+                </article>
+
+                <!-- Sudoku Learn -->
+                <article class="project-card" role="listitem">
+                    <header><h3>🧩 Sudoku Learn</h3></header>
+                    <p>Mobilvenligt Sudoku bygget i ren HTML/CSS/JS. Indeholder sværhedsgradstyret generator, noter, fortryd/gør om, hints, timer, fremhævning af samme tal, numpad-tællere og stram CSP.</p>
+                    <div class="project-meta"><strong>Teknologi:</strong> HTML5, CSS3, JavaScript (ES6+), esbuild, html-minifier-terser, LocalStorage</div>
+                    <p class="links"><a href="https://graceduquiza.github.io/SudokuGame/" target="_blank" rel="noopener">Live demo</a></p>
                 </article>
                 </div>
             </section>
