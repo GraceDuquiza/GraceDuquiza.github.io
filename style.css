@@ -79,12 +79,13 @@ a:focus-visible{ outline:2px solid var(--ring); outline-offset:2px; border-radiu
 
 /* ---------- Header ---------- */
 .site-header{
-    background:
-        radial-gradient(900px 500px at -10% 0%, rgba(59,130,246,.25), transparent 60%),
-        linear-gradient(180deg,#0f172a,#1f2937);
+    background: linear-gradient(180deg, #0f172a, #1f2937);
     color:#fff;
     border-bottom:1px solid rgba(255,255,255,.08);
     box-shadow:var(--shadow-1);
+    position: sticky;
+    top: 0;
+    z-index: 50;
 }
 
 /* ---------- Primary nav lists (EN/DK) ---------- */
@@ -96,22 +97,32 @@ ul.nav{
     margin:0;
     padding:0;
 }
+
+/* ---------- Adaptive nav link base ---------- */
 ul.nav a{
-    color:#cfe1ff;
+    color: var(--text); /* uses theme color automatically */;
     padding:.5rem .75rem;
     border-radius:8px;
     display:inline-block;
-}
-ul.nav a:hover{
-    color:#fff;
-    background:rgba(255,255,255,.10);
-    text-decoration:none;
+    font-weight:600;
+    transition: background 0.2s ease, color 0.2s ease;
 }
 
+ul.nav a:hover, 
+ul.nav a:focus-visible {
+    background: rgba(37, 99, 235, 0.12);
+    color: var(--primary);
+    text-decoration: none;
+}
+
+/* Prevent “stuck” focus on click (especially on mobile) */
+ul.nav a:focus {
+    outline: none;
+}
 /* Active nav link highlight */
 ul.nav a.is-active{
-    background:rgba(255,255,255,.18);
-    color:#fff;
+    background: rgba(37, 99, 235, 0.18);
+    color: var(--primary-700);
     text-decoration:none;
 }
 
@@ -126,6 +137,16 @@ nav.langbar{
 }
 nav.langbar.elevated{ box-shadow:0 8px 24px rgba(15,23,42,.12); }
 
+
+/* Hamburger / nav button icons (if any) */
+    button,
+    .nav-toggle,
+    .menu-icon,
+    .lang-switch button {
+        color: var(--text);
+        border-color: var(--border);
+        background: var(--surface);
+    }
 /* Language switch buttons */
 .lang-switch{ display:inline-flex; gap:.5rem; }
 .lang-switch button{
@@ -286,3 +307,93 @@ strong{ font-weight:700; }
 }
 
 
+/* =========================================================
+   Adaptive Navigation Colors — Matches System Theme
+   ========================================================= */
+
+/* Light Theme */
+@media (prefers-color-scheme: light) {
+  .site-header {
+    background: linear-gradient(180deg, #ffffff, #f8fafc);
+    color: var(--text);
+    border-bottom: 1px solid var(--border);
+    box-shadow: var(--shadow-1);
+  }
+
+  ul.nav a {
+    color: var(--text);
+  }
+
+  ul.nav a:hover {
+    color: var(--primary);
+    background: rgba(37, 99, 235, 0.08);
+  }
+
+  ul.nav a.is-active {
+    color: var(--primary-700);
+    background: rgba(37, 99, 235, 0.12);
+  }
+
+  nav.langbar {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+  }
+
+  .lang-switch button {
+    background: var(--surface);
+    color: var(--text);
+    border-color: var(--border);
+  }
+
+  .lang-switch button.active {
+    background: var(--primary);
+    color: #fff;
+    border-color: var(--primary);
+  }
+}
+
+/* Dark Theme */
+@media (prefers-color-scheme: dark) {
+    .site-header {
+        background: linear-gradient(180deg, #0f172a, #1f2937);
+        color: #fff;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        box-shadow: var(--shadow-1);
+    }
+
+    ul.nav a {
+        color: #cfe1ff;
+    }
+
+    ul.nav a:hover {
+        color: #fff;
+        background: rgba(255,255,255,0.1);
+    }
+
+    ul.nav a.is-active {
+        color: #fff;
+        background: rgba(255,255,255,0.18);
+    }
+
+    nav.langbar {
+        background: var(--surface);
+        border-bottom: 1px solid var(--border);
+        color: var(--text);
+    }
+
+    .lang-switch button {
+        background: var(--surface);
+        color: var(--text);
+        border-color: var(--border);
+    }
+
+    .lang-switch button.active {
+        background: var(--primary);
+        color: #fff;
+        border-color: var(--primary);
+    }
+}
+/* =========================================================
+    End of Adaptive Navigation Colors
+   ========================================================= */
