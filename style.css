@@ -294,18 +294,34 @@ strong{ font-weight:700; }
 }
 
 /* Optional: glassy About container */
-#about .container{
-    background:linear-gradient(180deg, rgba(255,255,255,.6), rgba(255,255,255,.35));
-    backdrop-filter:blur(4px);
-    border:1px solid var(--border);
-    border-radius:calc(var(--radius) + 2px);
-    padding:1.25rem;
-    box-shadow:var(--shadow-1);
-}
-@media (prefers-color-scheme: dark){
-    #about .container{ background:linear-gradient(180deg, rgba(17,24,39,.7), rgba(17,24,39,.5)); }
+#about .container {
+    background: linear-gradient(
+        180deg,
+        rgba(255,255,255,.6),
+        rgba(255,255,255,.35)
+    );
+
+    /* Safari support */
+    -webkit-backdrop-filter: blur(4px);
+
+    /* Standard property */
+    backdrop-filter: blur(4px);
+
+    border: 1px solid var(--border);
+    border-radius: calc(var(--radius) + 2px);
+    padding: 1.25rem;
+    box-shadow: var(--shadow-1);
 }
 
+@media (prefers-color-scheme: dark) {
+    #about .container {
+        background: linear-gradient(
+            180deg,
+            rgba(17,24,39,.7),
+            rgba(17,24,39,.5)
+        );
+    }
+}
 
 /* =========================================================
    Adaptive Navigation Colors — Matches System Theme
