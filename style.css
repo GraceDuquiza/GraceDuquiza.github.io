@@ -278,6 +278,47 @@ strong{ font-weight:700; }
     filter: none;
 }
 
+.qr-card{
+    margin:1rem auto 0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:.45rem;
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:.75rem;
+}
+
+.qr-card p{
+    margin:0;
+    color:var(--muted);
+    font-size:.95rem;
+}
+
+.portfolio-qr{
+    width:150px;
+    height:150px;
+    display:block;
+    border-radius:8px;
+    background:#fff;
+    border:1px solid var(--border);
+}
+
+@media print{
+    .qr-card{
+        border:1px solid #000;
+        box-shadow:none;
+        background:#fff;
+    }
+
+    .portfolio-qr{
+        width:180px;
+        height:180px;
+        border:1px solid #000;
+    }
+}
+
 /* ---------- Footer ---------- */
 .site-footer{
     background:linear-gradient(180deg,#111827,#0b1020);
