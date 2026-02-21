@@ -297,10 +297,10 @@ strong{ font-weight:700; }
 }
 
 .portfolio-qr{
-    width:150px;
-    height:150px;
+    width:180px;
+    height:180px;
     display:block;
-    border-radius:8px;
+    border-radius:0;
     background:#fff;
     border:1px solid var(--border);
 }
@@ -316,6 +316,7 @@ strong{ font-weight:700; }
         width:180px;
         height:180px;
         border:1px solid #000;
+        border-radius:0;
     }
 }
 
