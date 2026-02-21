@@ -1,27 +1,85 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>View CV — Grace Duquiza Olesen</title>
-        <style>
-            html, body {
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View CV - Grace Duquiza Olesen</title>
+    <style>
+        html, body {
             margin: 0;
             padding: 0;
             height: 100%;
             background-color: #f9f9f9;
             font-family: system-ui, sans-serif;
-            }
-            iframe {
+        }
+
+        .viewer-shell {
+            height: 100%;
+            display: grid;
+            grid-template-rows: auto 1fr;
+        }
+
+        .notice {
+            margin: 0;
+            padding: 10px 14px;
+            font-size: 0.92rem;
+            color: #334155;
+            background: #eef2ff;
+            border-bottom: 1px solid #c7d2fe;
+        }
+
+        iframe {
             width: 100%;
-            height: 100vh;
+            height: 100%;
             border: none;
-            }
-        </style>
-    </head>
-    <body>
-        <iframe title="Grace Duquiza Olesen CV" src="assets/CVGDO.pdf"
-            allow="fullscreen">
+        }
+
+        @media print {
+            body { display: none !important; }
+        }
+    </style>
+</head>
+<body>
+    <main class="viewer-shell">
+        <p class="notice">View only mode is enabled.</p>
+        <iframe
+            title="Grace Duquiza Olesen CV"
+            src="assets/CVGDO.pdf#toolbar=0&navpanes=0&scrollbar=1"
+            referrerpolicy="no-referrer">
         </iframe>
-    </body>
+    </main>
+
+    <script>
+        (function () {
+            const blockedKeys = new Set(["p", "s", "u"]);
+
+            document.addEventListener("contextmenu", (event) => {
+                event.preventDefault();
+            });
+
+            document.addEventListener("dragstart", (event) => {
+                event.preventDefault();
+            });
+
+            document.addEventListener("keydown", (event) => {
+                const key = (event.key || "").toLowerCase();
+                const hasModifier = event.ctrlKey || event.metaKey;
+                if (hasModifier && blockedKeys.has(key)) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                if (key === "printscreen") {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+            }, true);
+
+            window.addEventListener("beforeprint", (event) => {
+                event.preventDefault();
+            });
+        })();
+    </script>
+</body>
 </html>
+
+
