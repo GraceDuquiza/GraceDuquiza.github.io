@@ -330,9 +330,98 @@ strong{ font-weight:700; }
 /* ---------- Utilities ---------- */
 .hidden{ display:none !important; }
 
-/* Sticky header height on small screens */
-@media (max-width:640px){
-    :root{ --header-offset:96px; }
+/* Mobile header compaction */
+@media (max-width:768px){
+    /* Keep full site header sticky for easy navigation */
+    .site-header{
+        position:sticky;
+        top:0;
+    }
+
+    :root{ --header-offset:120px; }
+
+    /* Avoid double-sticky behavior inside sticky header */
+    nav.langbar{
+        position:static;
+        padding:6px 8px;
+        gap:.4rem;
+    }
+
+    .container{ padding:.65rem; }
+
+    ul.nav{ gap:.25rem .35rem; }
+    ul.nav{
+        flex-wrap:nowrap;
+        overflow-x:auto;
+        min-width:0;
+        -webkit-overflow-scrolling:touch;
+        scrollbar-width:thin;
+    }
+
+    ul.nav a{
+        padding:.2rem .3rem;
+        font-size:.76rem;
+        white-space:nowrap;
+    }
+
+    .lang-switch{ gap:.28rem; }
+
+    .lang-switch button{
+        padding:.18rem .32rem;
+        border-radius:7px;
+        font-size:.68rem;
+        min-width:2rem;
+        line-height:1.1;
+    }
+
+    .brand-row{
+        grid-template-columns:48px 1fr;
+        gap:.5rem .6rem;
+        padding:.42rem .55rem;
+        margin-top:6px;
+        border-radius:10px;
+    }
+
+    .brand-avatar{ width:48px; }
+
+    .avatar-img{ border-width:2px; }
+
+    .site-title{
+        margin:0;
+        font-size:clamp(1rem,3.2vw,1.22rem);
+        line-height:1.15;
+    }
+
+    .site-tagline{
+        font-size:.8rem;
+        line-height:1.2;
+    }
+}
+
+@media (max-width:420px){
+    nav.langbar{
+        padding:5px 6px;
+        gap:.3rem;
+    }
+
+    ul.nav{ gap:.18rem .22rem; }
+
+    ul.nav a{
+        padding:.16rem .24rem;
+        font-size:.72rem;
+    }
+
+    .lang-switch{
+        gap:.2rem;
+        align-items:center;
+    }
+
+    .lang-switch button{
+        padding:.14rem .22rem;
+        font-size:.64rem;
+        min-width:1.75rem;
+        border-radius:6px;
+    }
 }
 
 /* Optional: glassy About container */
