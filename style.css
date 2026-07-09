@@ -245,6 +245,9 @@ strong{ font-weight:700; }
 .project-meta br{ display:none; } /* chips look better on one flow line */
 
 /* Link button */
+.project-card .links{
+    display:flex; flex-wrap:wrap; gap:.55rem;
+}
 .project-card .links a{
     display:inline-block; font-weight:700;
     padding:.58rem .9rem; border-radius:10px;
