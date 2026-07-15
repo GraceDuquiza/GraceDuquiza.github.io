@@ -3,35 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View CV - Grace Duquiza Olesen</title>
+    <meta name="robots" content="noindex, noarchive">
+    <title>View CV — Grace Duquiza Olesen</title>
     <style>
-        html, body {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            background-color: #f9f9f9;
-            font-family: system-ui, sans-serif;
+        :root {
+            color-scheme: light;
+            --navy: #071a35;
+            --blue: #0d5278;
+            --teal: #2dd4bf;
+            --surface: #ffffff;
+            --background: #eaf1f7;
+            --text: #10213f;
+            --muted: #52647f;
+            --border: #cbd9e6;
         }
 
-        .viewer-shell {
-            height: 100%;
-            display: grid;
-            grid-template-rows: auto 1fr;
+        * { box-sizing: border-box; }
+
+        html { background: var(--background); }
+
+        body {
+            margin: 0;
+            color: var(--text);
+            background:
+                radial-gradient(circle at 10% 0%, rgba(45, 212, 191, .12), transparent 26rem),
+                var(--background);
+            font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+            line-height: 1.55;
         }
+
+        a { color: #075f7c; }
+        a:focus-visible, summary:focus-visible {
+            outline: 3px solid var(--teal);
+            outline-offset: 3px;
+        }
+
+        .viewer-header {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: .75rem max(1rem, calc((100% - 1100px) / 2));
+            color: #fff;
+            background: linear-gradient(110deg, var(--navy), var(--blue));
+            border-bottom: 1px solid rgba(255, 255, 255, .16);
+            box-shadow: 0 8px 24px rgba(7, 26, 53, .2);
+        }
+
+        .viewer-header h1 {
+            margin: 0;
+            font-size: clamp(1rem, 2vw, 1.3rem);
+        }
+
+        .back-link {
+            flex: none;
+            color: #d9f7f4;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .back-link:hover { text-decoration: underline; }
 
         .notice {
             margin: 0;
-            padding: 10px 14px;
-            font-size: 0.92rem;
-            color: #334155;
-            background: #eef2ff;
-            border-bottom: 1px solid #c7d2fe;
+            padding: .65rem 1rem;
+            color: #d9f4fa;
+            background: rgba(255, 255, 255, .06);
+            border-left: 3px solid var(--teal);
+            font-size: .85rem;
         }
 
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
+        .viewer-main {
+            width: min(100% - 1.5rem, 1100px);
+            margin: 0 auto;
+            padding: 1.25rem 0 3rem;
+        }
+
+        .pages {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .cv-page {
+            display: block;
+            width: min(100%, 900px);
+            height: auto;
+            margin: 0 auto;
+            background: #fff;
+            border: 1px solid var(--border);
+            box-shadow: 0 18px 48px rgba(7, 26, 53, .16);
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        .text-version {
+            width: min(100%, 900px);
+            margin: 1.5rem auto 0;
+            padding: 1rem 1.15rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(7, 26, 53, .08);
+        }
+
+        .text-version summary {
+            color: var(--blue);
+            cursor: pointer;
+            font-weight: 800;
+        }
+
+        .text-content { margin-top: 1.25rem; }
+        .text-content h2 { margin-top: 1.7rem; color: var(--blue); }
+        .text-content h3 { margin-bottom: .2rem; }
+        .text-content p { margin: .35rem 0; }
+        .text-content ul { margin-top: .45rem; }
+
+        @media (max-width: 650px) {
+            .viewer-header { align-items: flex-start; flex-direction: column; gap: .5rem; }
+            .notice { width: 100%; }
+            .viewer-main { width: min(100% - .75rem, 1100px); padding-top: .5rem; }
+            .pages { gap: .65rem; }
         }
 
         @media print {
@@ -40,46 +134,108 @@
     </style>
 </head>
 <body>
-    <main class="viewer-shell">
-        <p class="notice">View only mode is enabled.</p>
-        <iframe
-            title="Grace Duquiza Olesen CV"
-            src="assets/CVGDO.pdf#toolbar=0&navpanes=0&scrollbar=1"
-            referrerpolicy="no-referrer">
-        </iframe>
+    <header class="viewer-header">
+        <div>
+            <h1>Grace Duquiza Olesen — CV</h1>
+            <p class="notice">Browser preview · download and print controls are not provided</p>
+        </div>
+        <a class="back-link" href="index.html#about">← Back to portfolio</a>
+    </header>
+
+    <main class="viewer-main">
+        <section class="pages" aria-label="CV pages">
+            <img
+                class="cv-page"
+                src="assets/cv-pages/cv-page-1.png"
+                width="1191"
+                height="1684"
+                alt="Page 1 of 2 of Grace Duquiza Olesen's CV"
+                draggable="false">
+            <img
+                class="cv-page"
+                src="assets/cv-pages/cv-page-2.png"
+                width="1191"
+                height="1684"
+                alt="Page 2 of 2 of Grace Duquiza Olesen's CV"
+                loading="lazy"
+                draggable="false">
+        </section>
+
+        <details class="text-version">
+            <summary>Read an accessible text version of the CV</summary>
+            <div class="text-content">
+                <h2>Profile</h2>
+                <p>Final-year Computer Science student seeking a graduate opportunity in technology roles that combine software, data, and business understanding. Hands-on experience in building practical projects, analysing real-world datasets, and collaborating effectively in international teams.</p>
+
+                <h2>Key highlights</h2>
+                <ul>
+                    <li>Final-year Computer Science student graduating this year (2026), based in Aarhus with full work authorization in Denmark.</li>
+                    <li>Remote Data Analyst Intern at Johannes Gutenberg University Mainz, working with UK Biobank data in Python and contributing to a peer-reviewed publication.</li>
+                    <li>More than nine years of international customer-facing experience across the Philippines, UAE, Norway, and Denmark.</li>
+                    <li>Practical experience developing personal and academic software projects.</li>
+                </ul>
+
+                <h2>Skills</h2>
+                <p><strong>Programming:</strong> C++, Java, Python, JavaScript, and SQL.</p>
+                <p><strong>Web development:</strong> HTML, CSS, React, Node.js, and Express.js.</p>
+                <p><strong>Databases:</strong> PostgreSQL and SQLite.</p>
+                <p><strong>Data analysis:</strong> Pandas, NumPy, Matplotlib, and SciPy.</p>
+                <p><strong>Tools:</strong> Git, GitHub, VS Code, and Jupyter Notebooks.</p>
+                <p><strong>Languages:</strong> English, Danish, and Filipino/Tagalog.</p>
+
+                <h2>Education</h2>
+                <h3>Bachelor of Science in Computer Science</h3>
+                <p><strong>AMA University Online Education</strong> · 2021–Present · Online</p>
+                <p>Relevant coursework includes Software Engineering, Data Structures, Databases, Algorithms, Web Development, and Machine Learning.</p>
+                <h3>Accountancy</h3>
+                <p><strong>Filipino Institute UAE</strong> · 2018 · Dubai, UAE</p>
+                <p>Graduated with 3rd Honors in Accounting.</p>
+
+                <h2>Experience</h2>
+                <h3>Data Analyst Intern — Remote</h3>
+                <p><strong>Johannes Gutenberg University Mainz</strong> · April–July 2025 · Mainz, Germany</p>
+                <ul>
+                    <li>Analysed UK Biobank data on PM2.5 exposure and cardiovascular biomarkers using Python, Pandas, NumPy, and SciPy.</li>
+                    <li>Developed data-cleaning workflows, created visualisations, and supported statistical modelling.</li>
+                    <li>Presented findings with an international research team and contributed to a peer-reviewed publication.</li>
+                </ul>
+                <h3>Housekeeping Staff — Part-Time</h3>
+                <p><strong>Scandic Aarhus City</strong> · February 2024–Present · Aarhus, Denmark</p>
+                <p>Maintain high standards of cleanliness, hygiene, and safety in a fast-paced hospitality environment.</p>
+                <h3>Customer-Facing Operations Roles</h3>
+                <p><strong>Retail, Hospitality, and Cosmetics</strong> · 2010–2024 · Philippines, UAE, and Denmark</p>
+                <p>Worked as a Sales Consultant, Cashier, and Beauty Advisor across multicultural teams.</p>
+
+                <h2>Projects</h2>
+                <ul>
+                    <li><strong>Siomai Sarap:</strong> Responsive product showcase built with HTML, CSS, and Firebase Hosting.</li>
+                    <li><strong>Folder Tree Viewer:</strong> Flask application that visualises folder structures with Mermaid.js.</li>
+                    <li><strong>Danish Vocab Trainer:</strong> Danish vocabulary application with study and quiz modes.</li>
+                    <li><strong>Sudoku Learn:</strong> Interactive Sudoku game with a timer, hints, and saved progress.</li>
+                </ul>
+
+                <h2>Professional development and cultural exchange</h2>
+                <p><strong>Danish Data Science Academy Mentorship Programme:</strong> Mentee, 2025–2026.</p>
+                <p><strong>Danish language studies:</strong> AOF and FVU, 2024–Present.</p>
+                <p><strong>Au pair:</strong> Risskov, Denmark, November 2019–October 2021; Egersund, Norway, November 2021–June 2023.</p>
+            </div>
+        </details>
     </main>
 
     <script>
-        (function () {
-            const blockedKeys = new Set(["p", "s", "u"]);
+        (() => {
+            const blockedKeys = new Set(['p', 's', 'u']);
 
-            document.addEventListener("contextmenu", (event) => {
-                event.preventDefault();
-            });
-
-            document.addEventListener("dragstart", (event) => {
-                event.preventDefault();
-            });
-
-            document.addEventListener("keydown", (event) => {
-                const key = (event.key || "").toLowerCase();
-                const hasModifier = event.ctrlKey || event.metaKey;
-                if (hasModifier && blockedKeys.has(key)) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                }
-                if (key === "printscreen") {
+            document.addEventListener('contextmenu', event => event.preventDefault());
+            document.addEventListener('dragstart', event => event.preventDefault());
+            document.addEventListener('keydown', event => {
+                const key = (event.key || '').toLowerCase();
+                if ((event.ctrlKey || event.metaKey) && blockedKeys.has(key)) {
                     event.preventDefault();
                     event.stopPropagation();
                 }
             }, true);
-
-            window.addEventListener("beforeprint", (event) => {
-                event.preventDefault();
-            });
         })();
     </script>
 </body>
 </html>
-
-

@@ -1,169 +1,271 @@
-// portfolio.js — CSP-safe, full-page i18n + smooth scroll + scrollspy
+// portfolio.js — CSP-safe section routing, bilingual content, and accessible focus management
 (() => {
     'use strict';
 
-  /* ===================== Smooth anchor scrolling (with fixed header) ===================== */
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const DEFAULT_LANGUAGE = 'en';
+    const DEFAULT_SECTION = 'about';
+    const sectionIds = ['about', 'projects', 'experience', 'contact'];
+    const sections = sectionIds
+        .map(id => document.getElementById(id))
+        .filter(Boolean);
+    const validSectionIds = new Set(sections.map(section => section.id));
     const header = document.querySelector('.site-header');
-    const getHeaderOffset = () => {
-        if (!header) return 0;
-        const pos = getComputedStyle(header).position;
-        return (pos === 'fixed' || pos === 'sticky') ? header.offsetHeight : 0;
+    const languageButtons = document.querySelectorAll('.lang-switch [data-lang]');
+    const languageBlocks = document.querySelectorAll('.lang');
+    const htmlElement = document.documentElement;
+    const metaDescription = document.querySelector('meta[name="description"]');
+    const scrollProgress = document.querySelector('.scroll-progress');
+    const scrollProgressFill = scrollProgress?.querySelector('.scroll-progress__fill');
+    const scrollProgressValue = scrollProgress?.querySelector('.scroll-progress__value');
+
+    let currentLanguage = DEFAULT_LANGUAGE;
+    let currentSection = DEFAULT_SECTION;
+    let progressFrame = null;
+
+    function updateScrollProgress() {
+        progressFrame = null;
+        if (!scrollProgress || !scrollProgressFill || !scrollProgressValue) return;
+
+        const scrollableDistance = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+        const progress = scrollableDistance === 0
+            ? 100
+            : Math.min(100, Math.max(0, (window.scrollY / scrollableDistance) * 100));
+        const roundedProgress = Math.round(progress);
+
+        scrollProgressFill.style.transform = `scaleY(${progress / 100})`;
+        scrollProgressValue.textContent = `${roundedProgress}%`;
+        scrollProgress.setAttribute('aria-valuenow', String(roundedProgress));
+        scrollProgress.classList.toggle('is-scrollable', scrollableDistance > 0);
+    }
+
+    function requestProgressUpdate() {
+        if (progressFrame !== null) return;
+        progressFrame = requestAnimationFrame(updateScrollProgress);
+    }
+
+    const pageNames = {
+        en: {
+            about: 'About',
+            projects: 'Projects',
+            experience: 'Experience',
+            contact: 'Contact'
+        },
+        da: {
+            about: 'Om',
+            projects: 'Projekter',
+            experience: 'Erfaring',
+            contact: 'Kontakt'
+        }
     };
 
-    document.addEventListener('click', (e) => {
-        const a = e.target.closest('a[href^="#"]');
-        if (!a) return;
+    const descriptions = {
+        en: 'Portfolio of Grace Duquiza Olesen — Computer Science, software engineering, data analysis, projects, and professional experience.',
+        da: 'Portfolio for Grace Duquiza Olesen — datalogi, softwareudvikling, dataanalyse, projekter og professionel erfaring.'
+    };
 
-        const hash = a.getAttribute('href');
-        if (!hash || hash === '#') return;
+    function sectionFromLocation() {
+        const id = window.location.hash.slice(1).toLowerCase();
+        return validSectionIds.has(id) ? id : DEFAULT_SECTION;
+    }
 
-        const target = document.querySelector(hash);
+    function updateDocumentMetadata() {
+        const name = pageNames[currentLanguage]?.[currentSection] || pageNames.en[currentSection];
+        document.title = `${name} — Grace Duquiza Olesen`;
+        if (metaDescription) {
+            metaDescription.setAttribute('content', descriptions[currentLanguage]);
+        }
+    }
+
+    function updateNavigation() {
+        document.querySelectorAll('nav[aria-label="Primary"] a[href^="#"]').forEach(link => {
+            const isCurrent = link.getAttribute('href') === `#${currentSection}`;
+            link.classList.toggle('is-active', isCurrent);
+            if (isCurrent) link.setAttribute('aria-current', 'page');
+            else link.removeAttribute('aria-current');
+        });
+    }
+
+    function focusSection(section) {
+        const heading = section.querySelector('h2');
+        if (!heading) return;
+
+        const previousTabIndex = heading.getAttribute('tabindex');
+        heading.setAttribute('tabindex', '-1');
+        heading.focus({ preventScroll: true });
+        heading.addEventListener('blur', () => {
+            if (previousTabIndex === null) heading.removeAttribute('tabindex');
+            else heading.setAttribute('tabindex', previousTabIndex);
+        }, { once: true });
+    }
+
+    function showSection(id, { historyMode = 'none', moveFocus = false } = {}) {
+        const safeId = validSectionIds.has(id) ? id : DEFAULT_SECTION;
+        const target = document.getElementById(safeId);
         if (!target) return;
 
-        // same-page only
-        if (a.origin !== window.location.origin || a.pathname !== window.location.pathname) return;
+        currentSection = safeId;
+        sections.forEach(section => {
+            const isCurrent = section === target;
+            section.hidden = !isCurrent;
+            section.classList.toggle('is-current', isCurrent);
+        });
 
-        e.preventDefault();
+        updateNavigation();
+        updateDocumentMetadata();
 
-        const y = Math.max(0, target.getBoundingClientRect().top + window.scrollY - getHeaderOffset() - 8);
-        if (prefersReducedMotion) {
-        window.scrollTo(0, y);
-        } else {
-        window.scrollTo({ top: y, behavior: 'smooth' });
+        const url = new URL(window.location.href);
+        url.hash = safeId;
+        if (historyMode === 'push' && window.location.hash !== `#${safeId}`) {
+            history.pushState({ section: safeId }, '', url);
+        } else if (historyMode === 'replace') {
+            history.replaceState({ section: safeId }, '', url);
         }
 
-        // push hash without jump
-        if (history.pushState) history.pushState(null, '', hash);
-        else window.location.hash = hash;
+        const resetScroll = () => window.scrollTo({ top: 0, behavior: 'auto' });
+        resetScroll();
+        requestAnimationFrame(() => {
+            resetScroll();
+            requestProgressUpdate();
+        });
+        if (moveFocus) requestAnimationFrame(() => focusSection(target));
+    }
 
-        // a11y: focus target without re-scrolling
-        const prevTab = target.getAttribute('tabindex');
-        target.setAttribute('tabindex', '-1');
-        target.focus({ preventScroll: true });
-        target.addEventListener('blur', () => {
-        if (prevTab === null) target.removeAttribute('tabindex');
-        else target.setAttribute('tabindex', prevTab);
-        }, { once: true });
-    });
-
-    /* ===================== Language toggle (EN/DK) ===================== */
-    const DEFAULT = 'en';
-    const initialByBrowser = (navigator.language || navigator.userLanguage || 'en').toLowerCase().startsWith('da') ? 'da' : 'en';
-    const urlLang = (() => {
+    function initialLanguage() {
+        const browserLanguage = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+        let urlLanguage = null;
         try {
-        const p = new URL(window.location.href).searchParams.get('lang');
-        return (p === 'en' || p === 'da') ? p : null;
-        } catch { return null; }
-    })();
-    const stored = localStorage.getItem('siteLang');
-    const initialLang = urlLang || stored || initialByBrowser || DEFAULT;
+            const requested = new URL(window.location.href).searchParams.get('lang');
+            if (requested === 'en' || requested === 'da') urlLanguage = requested;
+        } catch {
+            urlLanguage = null;
+        }
 
-    const buttons = document.querySelectorAll('.lang-switch [data-lang]');
-    const langBlocks = document.querySelectorAll('.lang');
-    const htmlEl = document.documentElement;
-    const metaDesc = document.querySelector('meta[name="description"]');
-
-    const titles = {
-        en: 'Grace Duquiza Olesen — Portfolio',
-        da: 'Grace Duquiza Olesen — Portfolio'
-    };
-    const descriptions = {
-        en: 'Portfolio of Grace Duquiza Olesen — projects in web development and software engineering: Sudoku Learn (Vanilla JS), Danish Vocab Trainer, Siomai Cart Sarap, and more.',
-        da: 'Portfolio af Grace Duquiza Olesen — projekter i webudvikling og software engineering: Sudoku Learn (Vanilla JS), Dansk Vocab Trainer, Siomai Cart Sarap m.m.'
-    };
-
-    function setLang(lang) {
-        // html lang + persist
-        htmlEl.lang = lang;
-        localStorage.setItem('siteLang', lang);
-
-        // show/hide all language-scoped blocks via .hidden class
-        langBlocks.forEach(el => {
-        const match = el.classList.contains('lang-' + lang);
-        el.classList.toggle('hidden', !match);
-        });
-
-        // update toggle states
-        buttons.forEach(b => {
-        const active = b.dataset.lang === lang;
-        b.classList.toggle('active', active);
-        b.setAttribute('aria-pressed', String(active));
-        });
-
-        // update title + description (SEO/a11y)
-        if (document.title !== titles[lang]) document.title = titles[lang];
-        if (metaDesc && metaDesc.content !== descriptions[lang]) metaDesc.setAttribute('content', descriptions[lang]);
+        const storedLanguage = localStorage.getItem('siteLang');
+        const detectedLanguage = browserLanguage.startsWith('da') ? 'da' : 'en';
+        return urlLanguage || storedLanguage || detectedLanguage || DEFAULT_LANGUAGE;
     }
 
-    // listeners
-    buttons.forEach(b => {
-        b.addEventListener('click', (e) => {
-        e.preventDefault();
-        setLang(b.dataset.lang);
+    function setLanguage(language) {
+        const safeLanguage = language === 'da' ? 'da' : 'en';
+        currentLanguage = safeLanguage;
+        htmlElement.lang = safeLanguage;
+        localStorage.setItem('siteLang', safeLanguage);
+
+        languageBlocks.forEach(block => {
+            const matchesLanguage = block.classList.contains(`lang-${safeLanguage}`);
+            block.classList.toggle('hidden', !matchesLanguage);
+        });
+
+        languageButtons.forEach(button => {
+            const isActive = button.dataset.lang === safeLanguage;
+            button.classList.toggle('active', isActive);
+            button.setAttribute('aria-pressed', String(isActive));
+        });
+
+        updateNavigation();
+        updateDocumentMetadata();
+    }
+
+    function setupProjectCards() {
+        document.querySelectorAll('.project-card').forEach((card, index) => {
+            const firstDetailHeading = card.querySelector('h4');
+            if (!firstDetailHeading || card.dataset.collapsibleReady === 'true') return;
+
+            const isDanish = Boolean(card.closest('.lang-da'));
+            const labels = isDanish
+                ? { open: 'Læs hele projekthistorien', close: 'Skjul projekthistorien' }
+                : { open: 'Read the full project story', close: 'Hide the project story' };
+            const detailId = `project-story-${index + 1}`;
+            const detailContent = document.createElement('div');
+            const toggle = document.createElement('button');
+
+            detailContent.id = detailId;
+            detailContent.className = 'project-details';
+            detailContent.hidden = true;
+
+            let node = firstDetailHeading;
+            while (node) {
+                const nextNode = node.nextSibling;
+                detailContent.appendChild(node);
+                node = nextNode;
+            }
+
+            toggle.type = 'button';
+            toggle.className = 'project-story-toggle';
+            toggle.setAttribute('aria-controls', detailId);
+            toggle.setAttribute('aria-expanded', 'false');
+            toggle.textContent = labels.open;
+
+            toggle.addEventListener('click', () => {
+                const willOpen = detailContent.hidden;
+                detailContent.hidden = !willOpen;
+                toggle.setAttribute('aria-expanded', String(willOpen));
+                toggle.textContent = willOpen ? labels.close : labels.open;
+                card.classList.toggle('is-expanded', willOpen);
+                requestProgressUpdate();
+            });
+
+            card.append(toggle, detailContent);
+            card.dataset.collapsibleReady = 'true';
+        });
+    }
+
+    document.addEventListener('click', event => {
+        const link = event.target.closest('nav[aria-label="Primary"] a[href^="#"]');
+        if (!link) return;
+
+        const id = link.getAttribute('href').slice(1);
+        if (!validSectionIds.has(id)) return;
+
+        event.preventDefault();
+        showSection(id, { historyMode: 'push', moveFocus: true });
+    });
+
+    languageButtons.forEach(button => {
+        button.addEventListener('click', event => {
+            event.preventDefault();
+            setLanguage(button.dataset.lang);
         });
     });
 
-    // init
-    setLang(initialLang);
+    window.addEventListener('popstate', () => {
+        showSection(sectionFromLocation(), { moveFocus: true });
+    });
 
-    /* ===================== Scroll spy (highlight active section link) ===================== */
-    const sections = ['#about', '#projects', '#contact']
-        .map(sel => document.querySelector(sel))
-        .filter(Boolean);
-
-    // map href -> <a>
-    function navLinksForCurrentLang() {
-        const currentLang = localStorage.getItem('siteLang') || DEFAULT;
-        // pick the visible nav list (has .lang-XX and not .hidden)
-        const visibleNav = document.querySelector(`nav[aria-label="Primary"] ul.lang-${currentLang}:not(.hidden)`) || document;
-        const map = new Map();
-        visibleNav.querySelectorAll('a[href^="#"]').forEach(a => map.set(a.getAttribute('href'), a));
-        return map;
-    }
-
-    let linkMap = navLinksForCurrentLang();
-
-    // rebind when language toggles
-    buttons.forEach(b => b.addEventListener('click', () => { linkMap = navLinksForCurrentLang(); }));
-
-    const setActive = (id) => {
-        // clear all
-        linkMap.forEach(a => a.classList.remove('is-active'));
-        const link = linkMap.get('#' + id);
-        if (link) link.classList.add('is-active');
-    };
-
-    if ('IntersectionObserver' in window && sections.length) {
-        const io = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) setActive(entry.target.id);
-        });
-        }, { rootMargin: '-30% 0px -60% 0px', threshold: 0.01 });
-
-        sections.forEach(sec => io.observe(sec));
-    } else {
-        // fallback: on scroll, pick nearest
-        const onScroll = () => {
-        let top = window.scrollY + getHeaderOffset() + 40;
-        let current = sections[0]?.id || 'about';
-        for (const sec of sections) {
-            if (sec.offsetTop <= top) current = sec.id;
-            else break;
+    window.addEventListener('hashchange', () => {
+        const requestedSection = sectionFromLocation();
+        if (requestedSection !== currentSection) {
+            showSection(requestedSection, { moveFocus: true });
         }
-        setActive(current);
+    });
+
+    const languageBar = document.querySelector('.lang-switch')?.closest('nav');
+    if (languageBar) {
+        const updateElevation = () => {
+            languageBar.classList.toggle('elevated', window.scrollY > 8);
         };
-        document.addEventListener('scroll', onScroll, { passive: true });
-        onScroll();
+        document.addEventListener('scroll', updateElevation, { passive: true });
+        updateElevation();
     }
 
-    /* ===================== Elevate language bar on scroll ===================== */
-    const langbar = (document.querySelector('.lang-switch') && document.querySelector('.lang-switch').closest('nav')) || null;
-    if (langbar) {
-        const elevate = () => {
-        langbar.classList.toggle('elevated', window.scrollY > 8);
-        };
-        document.addEventListener('scroll', elevate, { passive: true });
-        elevate();
+    setupProjectCards();
+    document.addEventListener('scroll', requestProgressUpdate, { passive: true });
+    window.addEventListener('resize', requestProgressUpdate, { passive: true });
+    if ('ResizeObserver' in window) {
+        new ResizeObserver(requestProgressUpdate).observe(document.documentElement);
     }
+    setLanguage(initialLanguage());
+    const requestedSection = sectionFromLocation();
+    showSection(requestedSection, {
+        historyMode: window.location.hash === `#${requestedSection}` ? 'none' : 'replace'
+    });
+
+    window.addEventListener('load', () => {
+        requestAnimationFrame(() => {
+            window.scrollTo({ top: 0, behavior: 'auto' });
+            requestProgressUpdate();
+        });
+    }, { once: true });
+
+    requestProgressUpdate();
 })();

@@ -37,6 +37,13 @@
     </head>
     <body>
 
+        <div class="scroll-progress" role="progressbar" aria-label="Page scroll progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <span class="scroll-progress__track" aria-hidden="true">
+                <span class="scroll-progress__fill"></span>
+            </span>
+            <span class="scroll-progress__value" aria-hidden="true">0%</span>
+        </div>
+
         <header class="site-header">
         <div class="container">
             <!-- Primary nav in both languages + language switch on the right -->
@@ -45,9 +52,8 @@
             <ul class="nav lang lang-en">
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="https://www.linkedin.com/in/grace-duquiza-olesen-9b3005137" target="_blank" rel="noopener">LinkedIn</a></li>
-                <li><a href="https://github.com/GraceDuquiza" target="_blank" rel="noopener">GitHub</a></li>
                 <li><a href="cv_viewer.html" target="_blank" rel="noopener noreferrer">View CV</a></li>
             </ul>
 
@@ -55,10 +61,9 @@
             <ul class="nav lang lang-da hidden">
                 <li><a href="#about">Om</a></li>
                 <li><a href="#projects">Projekter</a></li>
+                <li><a href="#experience">Erfaring</a></li>
                 <li><a href="#contact">Kontakt</a></li>
-                <li><a href="https://www.linkedin.com/in/grace-duquiza-olesen-9b3005137" target="_blank" rel="noopener">LinkedIn</a></li>
-                <li><a href="https://github.com/GraceDuquiza" target="_blank" rel="noopener">GitHub</a></li>
-                <li><a href="cv_viewer.html" target="_blank" rel="noopener noreferrer">View CV</a></li>
+                <li><a href="cv_viewer.html" target="_blank" rel="noopener noreferrer">Se CV</a></li>
             </ul>
 
             <!-- Language switch (right side) -->
@@ -81,9 +86,21 @@
             </picture>
 
             <div class="brand-meta">
+                <p class="brand-kicker lang lang-en">Data · Software · Problem Solving</p>
+                <p class="brand-kicker lang lang-da hidden">Data · Software · Problemløsning</p>
                 <h1 class="site-title">Grace Duquiza Olesen</h1>
-                <p class="site-tagline lang lang-en">Computer Science student · Aarhus</p>
-                <p class="site-tagline lang lang-da hidden">Datalogistuderende · Aarhus</p>
+                <p class="site-tagline lang lang-en">Computer Science student focused on software engineering · Aarhus</p>
+                <p class="site-tagline lang lang-da hidden">Datalogistuderende med fokus på softwareudvikling · Aarhus</p>
+                <div class="brand-badges lang lang-en" aria-label="Professional status">
+                    <span>Based in Aarhus</span>
+                    <span>Graduating in 2026</span>
+                    <span>Open to junior opportunities</span>
+                </div>
+                <div class="brand-badges lang lang-da hidden" aria-label="Professionel status">
+                    <span>Bosat i Aarhus</span>
+                    <span>Afslutter i 2026</span>
+                    <span>Åben for juniorstillinger</span>
+                </div>
             </div>
             </div>
         </div>
@@ -96,230 +113,334 @@
             <!-- EN -->
                 <!-- ===== About (EN) ===== -->
                 <section class="lang lang-en" aria-labelledby="about-title-en">
+                    <p class="about-kicker">Professional profile</p>
                     <h2 id="about-title-en">About Me</h2>
+                    <div class="about-intro-grid">
+                        <div class="about-intro-copy">
+                            <p class="about-lead">
+                                I am a final-year Computer Science student based in Aarhus, Denmark, focused on building
+                                practical software and working with data to solve real problems.
+                            </p>
+                            <p>
+                                Through my studies, data-analysis internship, and personal projects, I have gained hands-on
+                                experience across full-stack development, databases, APIs, data analysis, testing, deployment,
+                                and software maintenance.
+                            </p>
+                            <p>
+                                Before transitioning into technology, I built more than nine years of international experience
+                                in customer-facing and service roles across the Philippines, UAE, Norway, and Denmark. That
+                                background strengthened my communication, adaptability, responsibility, and awareness of the
+                                people who ultimately use a product or service.
+                            </p>
+                        </div>
+                        <dl class="about-facts" aria-label="Professional overview">
+                            <div><dt>Location</dt><dd>Aarhus, Denmark</dd></div>
+                            <div><dt>Graduation</dt><dd>Expected completion: 2026</dd></div>
+                            <div><dt>Work authorization</dt><dd>Full authorization in Denmark</dd></div>
+                            <div><dt>Career focus</dt><dd>Software engineering and data analysis</dd></div>
+                        </dl>
+                    </div>
 
-                    <p>
-                        I am currently in my final year of Computer Science at AMA Oed University Philippines (online education),
-                        and I will be graduating in Summer 2026. I have been living in Denmark for more than four years, 
-                        am married to a Danish citizen, and hold a family reunification visa
-                        with full work authorization.
-                    </p>
+                    <div class="about-highlights" aria-label="Professional strengths">
+                        <article class="about-highlight">
+                            <span class="about-number" aria-hidden="true">01</span>
+                            <h3>Practical problem solving</h3>
+                            <p>I enjoy turning everyday needs into useful applications and improving them through testing and feedback.</p>
+                        </article>
+                        <article class="about-highlight">
+                            <span class="about-number" aria-hidden="true">02</span>
+                            <h3>Continuous learning</h3>
+                            <p>I ask questions, investigate how systems work, and keep iterating when the first approach is not enough.</p>
+                        </article>
+                        <article class="about-highlight">
+                            <span class="about-number" aria-hidden="true">03</span>
+                            <h3>International perspective</h3>
+                            <p>Living and working across four countries has made me adaptable and comfortable collaborating across cultures.</p>
+                        </article>
+                    </div>
 
-                    <p>
-                        Before transitioning into tech, I gained over 9+ years of international work experience
-                        in retail, hospitality, food and beverage, and cultural exchange programs
-                        across the Philippines, UAE, Norway, and Denmark.
-                        These experiences strengthened my adaptability, communication skills,
-                        and ability to collaborate with diverse teams.
-                    </p>
+                    <section class="about-story" aria-labelledby="approach-title-en">
+                        <div class="about-section-heading">
+                            <p class="about-section-label">How I work</p>
+                            <h3 id="approach-title-en">Curiosity, persistence, and responsibility</h3>
+                        </div>
+                        <div class="about-story-copy">
+                            <p>
+                                I would describe myself as curious, practical, and persistent. When I do not understand
+                                something, I continue asking questions until it becomes clearer. I want to understand not only
+                                what to do, but also why something works. I can sometimes spend too much time trying to make
+                                something perfect, but that also reflects how much I care about doing the work properly.
+                            </p>
+                            <p>
+                                I am honest about still being in the process of learning. I do not want to present myself as
+                                someone I am not, but I also try not to give up when something feels difficult. I may feel
+                                uncertain at first, but I normally keep going, look for another approach, ask for help when I
+                                need it, and improve one step at a time.
+                            </p>
+                            <p>
+                                Many of my project ideas come from situations I experience with my family or in everyday life.
+                                I enjoy recognising a practical problem and exploring whether a small software solution could
+                                make something easier, clearer, or more useful for another person.
+                            </p>
+                            <p>
+                                Living and working in different countries has taught me how to adjust to unfamiliar situations
+                                and communicate with many kinds of people. Beginning again in a new country, culture, and
+                                language was not always easy, but it made me more independent, patient, adaptable, and open to
+                                perspectives different from my own.
+                            </p>
+                            <p>
+                                I value responsibility, honesty, and respect. I appreciate constructive feedback because it can
+                                help me improve, while also taking time to think carefully and understand the reasoning behind
+                                important decisions.
+                            </p>
+                        </div>
+                    </section>
 
-                    <p>
-                        I am now building my career in software engineering and data-driven systems.
-                        I am passionate about developing practical applications that help solve real-world problems
-                        and create meaningful impact in everyday life.
-                    </p>
+                    <section class="about-block" aria-labelledby="education-title-en">
+                        <div class="about-section-heading">
+                            <p class="about-section-label">Education</p>
+                            <h3 id="education-title-en">Academic Background</h3>
+                        </div>
+                        <div class="education-card">
+                            <div>
+                                <h4 class="education-degree">Bachelor of Science in Computer Science</h4>
+                                <p class="education-school">AMA University Online Education, Philippines</p>
+                                <p class="education-date">2021–Present · Expected completion: 2026</p>
+                            </div>
+                            <p>
+                                The programme gives me a broad foundation in software engineering, programming, databases,
+                                algorithms, web development, machine learning, and system design. Academic projects have allowed
+                                me to apply these concepts across the complete development lifecycle.
+                            </p>
+                            <ul class="tag-list" aria-label="Relevant coursework">
+                                <li>Software Engineering</li><li>Data Structures &amp; Algorithms</li>
+                                <li>Database Systems</li><li>Object-Oriented Programming</li>
+                                <li>Web Development</li><li>Machine Learning</li>
+                                <li>Systems Analysis &amp; Design</li><li>Software Development Life Cycle</li>
+                            </ul>
+                        </div>
+                        <div class="education-card education-card-secondary">
+                            <div>
+                                <h4 class="education-degree">Bachelor of Science in Accountancy — Previous Studies</h4>
+                                <p class="education-school">Carlos Hilado Memorial State College, Philippines</p>
+                                <p class="education-date">2012–2013 · One academic year completed</p>
+                            </div>
+                            <p>
+                                Completed one academic year of coursework in accounting and business fundamentals before
+                                transitioning to Computer Science.
+                            </p>
+                        </div>
+                    </section>
 
-                    <h3>Internship Experience</h3>
-                    <p>
-                        I worked as a Data Analyst Intern at Johannes Gutenberg University Mainz, Germany,
-                        contributing to the 
-                        <a href="https://www.nightingaleheart.com/team" target="_blank" rel="noopener noreferrer">
-                        Nightingale Heart Project (official team page)
-                        </a>.
-                        In this role, I applied machine learning and statistical analysis techniques to UK Biobank data
-                        to investigate the relationship between PM2.5 exposure and blood biomarkers.
-                        I worked primarily with Python, NumPy, Pandas, Matplotlib, and SciPy for data processing,
-                        analysis, and visualization.
-                        The research resulted in a published article available
-                        <a href="https://rjeec.ro/Read/298?id=Ambient%20PM2.5%20exposure%20is%20linked%20to%20elevated%20platelet%20count%20and%20reduced%20serum%20creatinine%3A%20a%20cross-sectional%20study%20in%20the%20UK%20Biobank"
-                        target="_blank" rel="noopener noreferrer">here</a>.
-                    </p>
+                    <section class="about-block" aria-labelledby="skills-title-en">
+                        <div class="about-section-heading">
+                            <p class="about-section-label">Capabilities</p>
+                            <h3 id="skills-title-en">Technical Skills</h3>
+                        </div>
+                        <p class="about-section-intro">Technologies I have used through coursework, research, and software projects.</p>
+                        <div class="skills-grid">
+                            <article class="skill-card"><h4>Programming</h4><p>Python · Java · C++ · JavaScript · TypeScript · SQL</p></article>
+                            <article class="skill-card"><h4>Frontend</h4><p>React · Next.js · HTML · CSS · Tailwind CSS · Responsive design</p></article>
+                            <article class="skill-card"><h4>Backend &amp; APIs</h4><p>ASP.NET Core · Node.js · Express.js · REST APIs · JWT authentication</p></article>
+                            <article class="skill-card"><h4>Databases</h4><p>PostgreSQL · Supabase · SQLite · Database design</p></article>
+                            <article class="skill-card"><h4>Data Analysis</h4><p>Pandas · NumPy · SciPy · Matplotlib · Jupyter Notebook · Markdown</p></article>
+                            <article class="skill-card"><h4>Tools &amp; Deployment</h4><p>Git · GitHub · Docker · Firebase · Azure · Vercel · Capacitor · VS Code</p></article>
+                        </div>
+                        <h4 class="concepts-title">Software-engineering practices</h4>
+                        <ul class="tag-list tag-list--concepts">
+                            <li>Requirements analysis</li><li>System and database design</li><li>Debugging and testing</li>
+                            <li>API integration</li><li>Version control</li><li>Deployment and maintenance</li>
+                            <li>Security</li><li>Responsible use of AI-assisted development tools</li>
+                        </ul>
+                    </section>
 
-                    <p>
-                        I am also currently a mentee in the Danish Data Science Academy (DDSA)
-                        Mentorship Programme 2025–2026, where I continue developing my
-                        technical skills and understanding of Denmark’s Data Science Community.
-                    </p>
+                    <section class="about-block" aria-labelledby="languages-title-en">
+                        <div class="about-section-heading">
+                            <p class="about-section-label">Communication</p>
+                            <h3 id="languages-title-en">Languages</h3>
+                        </div>
+                        <dl class="language-grid">
+                            <div><dt>Hiligaynon</dt><dd>Mother tongue</dd></div>
+                            <div><dt>Tagalog</dt><dd>Native proficiency</dd></div>
+                            <div><dt>English</dt><dd>Fluent</dd></div>
+                            <div><dt>Danish</dt><dd>PD3 certified · Continuing studies</dd></div>
+                        </dl>
+                    </section>
 
-                    <h3>Current Employment</h3>
-                    <p>
-                        I currently work part-time at Scandic Aarhus City as a cleaning assistant.
-                        This role has strengthened my discipline, attention to detail, and ability to work efficiently
-                        within structured standards in a Danish workplace environment.
-                    </p>
-
-                    <h3>How I Work</h3>
-                    <p>
-                        I enjoy rapid prototyping and learning by building. I experiment with ideas,
-                        refine them step by step, and turn them into maintainable solutions.
-                        I may use AI tools for brainstorming or first drafts, but I always review,
-                        test, refactor, and take ownership of the final result.
-                    </p>
-
-                    <h3>Core Skills</h3>
-                    <ul>
-                        <li><strong>Programming Languages:</strong> Python, Java, C++, JavaScript, TypeScript</li>
-
-                        <li><strong>Frontend Development:</strong> React, Next.js, Vue.js, HTML, CSS, Tailwind CSS, Bootstrap</li>
-
-                        <li><strong>Backend Development:</strong> Node.js, Express.js, Django, REST API design, JWT authentication</li>
-
-                        <li><strong>Databases & Querying:</strong> PostgreSQL, MongoDB, SQLite, SQL, Prisma ORM</li>
-
-                        <li><strong>Data & Analytics:</strong> NumPy, Pandas, Matplotlib, scikit-learn, exploratory data analysis</li>
-
-                        <li><strong>Dev Tools & Deployment:</strong> Git, GitHub, Docker, Firebase, Render, Supabase, VS Code</li>
-
-                        <li><strong>Software Engineering:</strong> OOP, data structures, system design fundamentals, Agile development principles, debugging, clean code practices</li>
-                    </ul>
-
-                    <h3>Soft Skills</h3>
-                    <ul>
-                        <li><strong>Team Collaboration:</strong> Comfortable working with diverse teams and building positive working relationships.</li>
-
-                        <li><strong>Work Ethic & Responsibility:</strong> Committed to delivering quality work with discipline and consistency.</li>
-
-                        <li><strong>Curiosity & Continuous Learning:</strong> Motivated to improve, explore new technologies, and grow step by step.</li>
-
-                        <li><strong>Initiative & Proactivity:</strong> Take ownership of tasks and actively look for better solutions.</li>
-
-                        <li><strong>Adaptability:</strong> Able to adjust quickly in new environments and multicultural settings.</li>
-
-                        <li><strong>Structured Problem-Solving:</strong> Prefer understanding the system design first, prototyping iteratively, and refining solutions carefully.</li>
-                    </ul>
-
-                    <h3>Languages</h3>
-                    <ul>
-                        <li>Danish (PD3 certified; completed AOF; currently enrolled in FVU)</li>
-                        <li>English (fluent)</li>
-                        <li>Tagalog (native proficiency)</li>
-                        <li>Hiligaynon (mother tongue)</li>
-                    </ul>
-
-                    <h3>Personal</h3>
-                    <p>
-                        Outside of coding, I enjoy social game nights with friends (such as Skibo and Partners)
-                        and spending time with family. I’m interested in TED Talks, action films,
-                        and music genres such as pop, hard, and alternative rock, as well as EDM.
-                        I’m naturally curious and enjoy learning, especially when I can transform ideas
-                        into practical solutions.
-                    </p>
-
+                    <aside class="personal-note">
+                        <strong>Beyond technology</strong>
+                        <p>
+                            Family is very important to me, and I enjoy spending time with family and friends. I like solving
+                            Sudoku, singing karaoke, listening to music, shopping, and playing games such as Skip-Bo and
+                            Partners. StepMania is one of my favourite games because it lets me enjoy Dance Dance
+                            Revolution-style dancing at home. I also enjoy action and fantasy films and watching TED Talks.
+                        </p>
+                    </aside>
                 </section>
 
                 <!-- ===== Om mig (DK) ===== -->
                 <section class="lang lang-da hidden" aria-labelledby="about-title-da">
-                <h2 id="about-title-da">Om mig</h2>
+                    <p class="about-kicker">Professionel profil</p>
+                    <h2 id="about-title-da">Om mig</h2>
+                    <div class="about-intro-grid">
+                        <div class="about-intro-copy">
+                            <p class="about-lead">
+                                Jeg er datalogistuderende på sidste år og bor i Aarhus. Mit fokus er at udvikle praktisk
+                                software og bruge data til at løse virkelige problemer.
+                            </p>
+                            <p>
+                                Gennem mit studie, min dataanalysepraktik og mine egne projekter har jeg fået praktisk erfaring
+                                med full-stack-udvikling, databaser, API'er, dataanalyse, test, deployment og vedligeholdelse.
+                            </p>
+                            <p>
+                                Før jeg skiftede retning mod teknologi, opbyggede jeg mere end ni års international erfaring i
+                                kundevendte servicejob i Filippinerne, UAE, Norge og Danmark. Det har styrket min kommunikation,
+                                tilpasningsevne, ansvarlighed og forståelse for de mennesker, der i sidste ende bruger et produkt.
+                            </p>
+                        </div>
+                        <dl class="about-facts" aria-label="Professionelt overblik">
+                            <div><dt>Placering</dt><dd>Aarhus, Danmark</dd></div>
+                            <div><dt>Afslutning</dt><dd>Forventet afslutning: 2026</dd></div>
+                            <div><dt>Arbejdstilladelse</dt><dd>Fuld arbejdstilladelse i Danmark</dd></div>
+                            <div><dt>Karrierefokus</dt><dd>Softwareudvikling og dataanalyse</dd></div>
+                        </dl>
+                    </div>
 
-                    <p>
-                        Jeg er i øjeblikket på sidste år af min Bachelor i Datalogi (BSc Computer Science) ved AMA OEd University Filippinerne (online uddannelse),
-                        og dimitterer i sommeren 2026. Jeg har boet i Danmark i mere end fire år, 
-                        er gift med en dansk mand og har opholdstilladelse gennem familiesammenføring
-                        med fuld arbejdstilladelse.
-                    </p>
+                    <div class="about-highlights" aria-label="Professionelle styrker">
+                        <article class="about-highlight">
+                            <span class="about-number" aria-hidden="true">01</span>
+                            <h3>Praktisk problemløsning</h3>
+                            <p>Jeg omsætter gerne hverdagens behov til nyttige applikationer og forbedrer dem gennem test og feedback.</p>
+                        </article>
+                        <article class="about-highlight">
+                            <span class="about-number" aria-hidden="true">02</span>
+                            <h3>Kontinuerlig læring</h3>
+                            <p>Jeg stiller spørgsmål, undersøger hvordan systemer fungerer og prøver igen, når den første tilgang ikke er nok.</p>
+                        </article>
+                        <article class="about-highlight">
+                            <span class="about-number" aria-hidden="true">03</span>
+                            <h3>Internationalt perspektiv</h3>
+                            <p>Erfaring fra fire lande har gjort mig tilpasningsdygtig og tryg ved tværkulturelt samarbejde.</p>
+                        </article>
+                    </div>
 
-                    <p>
-                        Før jeg skiftede til tech-branchen, opbyggede jeg mere end ni års international erhvervserfaring
-                        inden for detailhandel, hotel- og restaurationsbranchen samt kulturelle udvekslingsprogrammer
-                        i Filippinerne, UAE, Norge og Danmark.
-                        Disse erfaringer har styrket min omstillingsparathed, mine kommunikationsevner
-                        og min evne til at samarbejde i mangfoldige teams.
-                    </p>
+                    <section class="about-story" aria-labelledby="approach-title-da">
+                        <div class="about-section-heading">
+                            <p class="about-section-label">Sådan arbejder jeg</p>
+                            <h3 id="approach-title-da">Nysgerrighed, vedholdenhed og ansvarlighed</h3>
+                        </div>
+                        <div class="about-story-copy">
+                            <p>
+                                Jeg vil beskrive mig selv som nysgerrig, praktisk og vedholdende. Når der er noget, jeg ikke
+                                forstår, bliver jeg ved med at stille spørgsmål, indtil det giver mere mening. Jeg vil ikke kun
+                                vide, hvad jeg skal gøre, men også hvorfor noget virker. Nogle gange bruger jeg for lang tid på
+                                at gøre noget perfekt, men det afspejler også, at jeg går op i at udføre arbejdet ordentligt.
+                            </p>
+                            <p>
+                                Jeg er ærlig omkring, at jeg stadig er i gang med at lære. Jeg ønsker ikke at fremstille mig
+                                selv som noget, jeg ikke er, men jeg prøver samtidig ikke at give op, når noget føles svært.
+                                Jeg kan være usikker i begyndelsen, men jeg fortsætter som regel, finder en anden tilgang, beder
+                                om hjælp, når jeg har brug for det, og bliver bedre ét skridt ad gangen.
+                            </p>
+                            <p>
+                                Mange af mine projektidéer udspringer af situationer, jeg oplever sammen med min familie eller
+                                i hverdagen. Jeg kan godt lide at opdage et praktisk problem og undersøge, om en lille
+                                softwareløsning kan gøre noget lettere, tydeligere eller mere nyttigt for en anden person.
+                            </p>
+                            <p>
+                                Det at bo og arbejde i forskellige lande har lært mig at finde mig til rette i uvante
+                                situationer og kommunikere med mange forskellige mennesker. Det var ikke altid let at begynde
+                                på ny med et andet land, en anden kultur og et nyt sprog, men det gjorde mig mere selvstændig,
+                                tålmodig, omstillingsparat og åben over for andre perspektiver.
+                            </p>
+                            <p>
+                                Jeg lægger vægt på ansvarlighed, ærlighed og respekt. Jeg værdsætter konstruktiv feedback,
+                                fordi den kan hjælpe mig med at udvikle mig, samtidig med at jeg tager mig tid til at tænke
+                                grundigt og forstå begrundelsen bag vigtige beslutninger.
+                            </p>
+                        </div>
+                    </section>
 
-                    <p>
-                        Jeg er nu i gang med at opbygge min karriere inden for softwareudvikling og databaserede systemer.
-                        Jeg brænder for at udvikle praktiske løsninger, der kan løse virkelige problemstillinger
-                        og skabe værdi i hverdagen.
-                    </p>
+                    <section class="about-block" aria-labelledby="education-title-da">
+                        <div class="about-section-heading">
+                            <p class="about-section-label">Uddannelse</p>
+                            <h3 id="education-title-da">Uddannelsesbaggrund</h3>
+                        </div>
+                        <div class="education-card">
+                            <div>
+                                <h4 class="education-degree">Bachelor of Science in Computer Science</h4>
+                                <p class="education-school">AMA University Online Education, Filippinerne</p>
+                                <p class="education-date">2021–nu · Forventet afslutning: 2026</p>
+                            </div>
+                            <p>
+                                Uddannelsen giver mig et bredt fundament inden for softwareudvikling, programmering, databaser,
+                                algoritmer, webudvikling, machine learning og systemdesign. Studieprojekter har givet mig mulighed
+                                for at anvende emnerne gennem hele udviklingsforløbet.
+                            </p>
+                            <ul class="tag-list" aria-label="Relevante fag">
+                                <li>Softwareudvikling</li><li>Datastrukturer &amp; algoritmer</li>
+                                <li>Databasesystemer</li><li>Objektorienteret programmering</li>
+                                <li>Webudvikling</li><li>Machine learning</li>
+                                <li>Systemanalyse &amp; -design</li><li>Softwareudviklingens livscyklus</li>
+                            </ul>
+                        </div>
+                        <div class="education-card education-card-secondary">
+                            <div>
+                                <h4 class="education-degree">Bachelor of Science in Accountancy — tidligere studier</h4>
+                                <p class="education-school">Carlos Hilado Memorial State College, Filippinerne</p>
+                                <p class="education-date">2012–2013 · Ét studieår gennemført</p>
+                            </div>
+                            <p>
+                                Gennemførte ét studieår med fag inden for regnskab og grundlæggende erhvervsøkonomi, før jeg
+                                skiftede til datalogi.
+                            </p>
+                        </div>
+                    </section>
 
-                    <h3>Praktik</h3>
-                    <p>
-                        Jeg arbejdede som Data Analyst Intern ved Johannes Gutenberg University Mainz, Tyskland,
-                        hvor jeg bidrog til 
-                        <a href="https://www.nightingaleheart.com/team" target="_blank" rel="noopener noreferrer">
-                        Nightingale Heart Project (officiel team-side)
-                        </a>.
-                        I denne rolle anvendte jeg machine learning og statistiske analysemetoder på UK Biobank-data
-                        for at undersøge sammenhængen mellem PM2.5-eksponering og blodbiomarkører.
-                        Jeg arbejdede primært med Python, NumPy, Pandas, Matplotlib og SciPy til databehandling,
-                        analyse og visualisering.
-                        Projektet resulterede i en publiceret forskningsartikel, som kan læses
-                        <a href="https://rjeec.ro/Read/298?id=Ambient%20PM2.5%20exposure%20is%20linked%20to%20elevated%20platelet%20count%20and%20reduced%20serum%20creatinine%3A%20a%20cross-sectional%20study%20in%20the%20UK%20Biobank"
-                        target="_blank" rel="noopener noreferrer">her</a>.
-                    </p>
+                    <section class="about-block" aria-labelledby="skills-title-da">
+                        <div class="about-section-heading">
+                            <p class="about-section-label">Kompetencer</p>
+                            <h3 id="skills-title-da">Tekniske færdigheder</h3>
+                        </div>
+                        <p class="about-section-intro">Teknologier, jeg har brugt gennem fag, forskning og softwareprojekter.</p>
+                        <div class="skills-grid">
+                            <article class="skill-card"><h4>Programmering</h4><p>Python · Java · C++ · JavaScript · TypeScript · SQL</p></article>
+                            <article class="skill-card"><h4>Frontend</h4><p>React · Next.js · HTML · CSS · Tailwind CSS · Responsivt design</p></article>
+                            <article class="skill-card"><h4>Backend &amp; API'er</h4><p>ASP.NET Core · Node.js · Express.js · REST API'er · JWT-autentificering</p></article>
+                            <article class="skill-card"><h4>Databaser</h4><p>PostgreSQL · Supabase · SQLite · Databasedesign</p></article>
+                            <article class="skill-card"><h4>Dataanalyse</h4><p>Pandas · NumPy · SciPy · Matplotlib · Jupyter Notebook · Markdown</p></article>
+                            <article class="skill-card"><h4>Værktøjer &amp; deployment</h4><p>Git · GitHub · Docker · Firebase · Azure · Vercel · Capacitor · VS Code</p></article>
+                        </div>
+                        <h4 class="concepts-title">Praksis inden for softwareudvikling</h4>
+                        <ul class="tag-list tag-list--concepts">
+                            <li>Kravspecifikation og analyse</li><li>System- og databasedesign</li><li>Fejlfinding og test</li>
+                            <li>API-integration</li><li>Versionsstyring</li><li>Deployment og vedligeholdelse</li>
+                            <li>Sikkerhed</li><li>Ansvarlig brug af AI-værktøjer i udvikling</li>
+                        </ul>
+                    </section>
 
-                    <p>
-                        Jeg er desuden mentee i Danish Data Science Academy (DDSA) Mentorship Programme 2025–2026,
-                        hvor jeg fortsat udvikler mine tekniske kompetencer og min forståelse for det danske data science-netværk.
-                    </p>
+                    <section class="about-block" aria-labelledby="languages-title-da">
+                        <div class="about-section-heading">
+                            <p class="about-section-label">Kommunikation</p>
+                            <h3 id="languages-title-da">Sprog</h3>
+                        </div>
+                        <dl class="language-grid">
+                            <div><dt>Hiligaynon</dt><dd>Modersmål</dd></div>
+                            <div><dt>Tagalog</dt><dd>Modersmålsniveau</dd></div>
+                            <div><dt>Engelsk</dt><dd>Flydende</dd></div>
+                            <div><dt>Dansk</dt><dd>PD3 bestået · Fortsat undervisning</dd></div>
+                        </dl>
+                    </section>
 
-                    <h3>Nuværende beskæftigelse</h3>
-                    <p>
-                        Jeg arbejder i øjeblikket deltid hos Scandic Aarhus City som rengøringsassistent.
-                        Stillingen har styrket min disciplin, min sans for detaljer og min evne til at arbejde effektivt
-                        inden for faste standarder i et dansk arbejdsmiljø.
-                    </p>
-
-                    <h3>Min arbejdsmetode</h3>
-                    <p>
-                        Jeg arbejder gerne med hurtig prototyping og lærer bedst ved at bygge løsninger.
-                        Jeg eksperimenterer med idéer, forbedrer dem trin for trin og omsætter dem til
-                        vedligeholdelige og gennemtænkte løsninger.
-                        Jeg kan bruge AI-værktøjer til idéudvikling eller første udkast,
-                        men jeg gennemgår altid, tester, refaktorerer og tager ansvar for det endelige resultat.
-                    </p>
-
-
-                    <h3>Kernekompetencer</h3>
-                    <ul>
-                        <li><strong>Programmeringssprog:</strong> Python, Java, C++, JavaScript, TypeScript</li>
-
-                        <li><strong>Frontend-udvikling:</strong> React, Next.js, Vue.js, HTML, CSS, Tailwind CSS, Bootstrap</li>
-
-                        <li><strong>Backend-udvikling:</strong> Node.js, Express.js, Django, REST API-design, JWT-autentificering</li>
-
-                        <li><strong>Databaser & forespørgsler:</strong> PostgreSQL, MongoDB, SQLite, SQL, Prisma ORM</li>
-
-                        <li><strong>Data & analyse:</strong> NumPy, Pandas, Matplotlib, scikit-learn, eksplorativ dataanalyse</li>
-
-                        <li><strong>Udviklingsværktøjer & deployment:</strong> Git, GitHub, Docker, Firebase, Render, Supabase, VS Code</li>
-
-                        <li><strong>Softwareudvikling:</strong> OOP, datastrukturer, grundlæggende systemdesign, Agile-principper, debugging, clean code-praksis</li>
-                    </ul>
-
-                    <h3>Personlige kompetencer</h3>
-                    <ul>
-                        <li><strong>Samarbejde:</strong> Trives i samarbejde med forskellige typer mennesker og bidrager til et positivt arbejdsmiljø.</li>
-
-                        <li><strong>Arbejdsmoral & ansvarlighed:</strong> Engageret i at levere kvalitetsarbejde med disciplin og stabilitet.</li>
-
-                        <li><strong>Nysgerrighed & kontinuerlig læring:</strong> Motiveret for at udvikle mig, udforske nye teknologier og forbedre mine kompetencer trin for trin.</li>
-
-                        <li><strong>Initiativ:</strong> Tager ansvar for opgaver og søger aktivt bedre og mere effektive løsninger.</li>
-
-                        <li><strong>Omstillingsparathed:</strong> Tilpasser mig hurtigt nye miljøer og multikulturelle arbejdssituationer.</li>
-
-                        <li><strong>Struktureret problemløsning:</strong> Foretrækker først at forstå systemdesign og struktur, arbejde iterativt og forfine løsninger grundigt.</li>
-                    </ul>
-
-
-                    <h3>Sprog</h3>
-                    <ul>
-                        <li>Dansk (PD3 bestået; afsluttet AOF; fortsat tilmeldt FVU)</li>
-                        <li>Engelsk (flydende)</li>
-                        <li>Tagalog (modersmål)</li>
-                        <li>Hiligaynon (modersmål)</li>
-                    </ul>
-                    
-
-                    <h3>Personligt</h3>
-                    <p>
-                        Uden for kodning nyder jeg spilaftener med venner (f.eks. Skibo og Partners)
-                        samt tid med familien. Jeg interesserer mig for TED Talks, actionfilm
-                        og musikgenrer som pop, hard og alternativ rock samt EDM. Jeg er naturligt nysgerrig og holder af at lære nyt,
-                        især når jeg kan omsætte idéer til praktiske løsninger.
-                    </p>
-
+                    <aside class="personal-note">
+                        <strong>Uden for teknologien</strong>
+                        <p>
+                            Min familie betyder meget for mig, og jeg nyder at være sammen med familie og venner. Jeg kan godt
+                            lide at løse sudoku, synge karaoke, lytte til musik, shoppe og spille spil som Skip-Bo og Partners.
+                            StepMania er et af mine yndlingsspil, fordi jeg kan danse i Dance Dance Revolution-stil derhjemme.
+                            Jeg holder også af action- og fantasyfilm og af at se TED Talks.
+                        </p>
+                    </aside>
                 </section>
 
             </div>
@@ -329,139 +450,736 @@
         <section id="projects" class="section">
             <div class="container">
             <!-- EN -->
-            <section class="lang lang-en">
-                <h2>Projects</h2>
+            <section class="lang lang-en" aria-labelledby="projects-title-en">
+                <p class="projects-kicker">Selected work</p>
+                <h2 id="projects-title-en">The Stories Behind My Projects</h2>
+                <div class="projects-intro">
+                    <p>Most of my projects did not begin because I wanted to use a particular programming language or framework. They usually started from something I experienced personally, something I found difficult, or something I thought could be made easier with software.</p>
+                    <p>Some ideas came from my own needs, such as learning Danish or understanding the structure of a growing software project. Others came from my family, my studies, or situations I noticed in everyday life.</p>
+                    <p>When I have an idea, I usually begin by asking what the real problem is and who the application could help. I then research the topic, define the requirements, plan the features, build a working version, test it, and improve it through feedback.</p>
+                    <p>Not all of my projects are perfect or fully finished. Some are still being developed, while others were paused when my priorities changed. I still include them because each project represents something I learned, a problem I tried to understand, or another step in my growth as a Computer Science student.</p>
+                    <p>My projects show not only the technologies I have used, but also how I think, learn, solve problems, and turn personal experiences into working applications.</p>
+                </div>
                 <div class="projects-grid" role="list">
                 <!-- Nutri-Tsek -->
-                <article class="project-card" role="listitem">
-                    <header><h3>🥗 Nutri-Tsek — Product Evaluation App</h3></header>
-                    <p>Bachelor thesis project: a mobile-based nutrition app that helps users evaluate packaged food products through barcode scanning, Nutri-Score, NOVA classification, Nøglehullet assessment, traffic-light nutrient grading, product comparison, calorie tracking, and personalized recommendations.</p>
-                    <div class="project-meta">
-                    <strong>Frontend:</strong> Next.js, React, TypeScript, Tailwind CSS, Capacitor Android<br>
-                    <strong>Backend:</strong> ASP.NET Core Web API (.NET 10), JWT Authentication<br>
-                    <strong>Database:</strong> PostgreSQL, Supabase<br>
-                    <strong>Deployment:</strong> Vercel, Android APK
-                    </div>
+                <article class="project-card project-card--featured" role="listitem">
+                    <header><h3>🥗 Nutri-Tsek</h3></header>
+                    <p><strong>Full-stack nutrition-evaluation web and Android application</strong></p>
+                    <p><strong>Technologies:</strong> Next.js, React, TypeScript, Tailwind CSS, ASP.NET Core, PostgreSQL, Supabase, Capacitor, Azure, and Vercel</p>
                     <p class="links">
-                        <a href="https://nutritsek.duquizaolesen.com" target="_blank" rel="noopener">Live Demo</a>
-                        <a href="https://github.com/GraceDuquiza/Nutri-Tsek" target="_blank" rel="noopener">GitHub Repo</a>
-                        <a href="https://github.com/GraceDuquiza/Nutri-Tsek/releases/download/v1.0.5/NutriTsek.v1.0.5.apk" target="_blank" rel="noopener">Download APK</a>
+                        <a href="https://nutritsek.duquizaolesen.com" target="_blank" rel="noopener">Open Live Demo</a>
+                        <a href="https://github.com/GraceDuquiza/Nutri-Tsek" target="_blank" rel="noopener">GitHub Repository</a>
+                        <a href="https://github.com/GraceDuquiza/Nutri-Tsek/releases/download/v1.0.5/NutriTsek.v1.0.5.apk" target="_blank" rel="noopener">Android Release</a>
                     </p>
+                    <p><em>The web version demonstrates Nutri-Tsek’s main features. Barcode scanning and other mobile functions may work differently depending on the browser and device.</em></p>
+
+                    <h4>How the idea started</h4>
+                    <p>The idea for Nutri-Tsek came from two experiences.</p>
+                    <p>While preparing for my Prøve i Dansk 3 (PD3) oral exam, my topic was <em>“Sundhed i Danmark med fokus på nye madvaner.”</em> Researching the topic made me think more about food choices, nutrition labels, and how difficult the information on food packaging can sometimes be to understand.</p>
+                    <p>Another important experience happened during a summer trip to Switzerland. I was shopping with a friend when she scanned a drink using an application and showed me its product rating. I thought it was useful and interesting that an application could quickly explain information about a food product.</p>
+                    <p>That experience stayed in my mind. Later, when I needed to choose a project for my Bachelor of Science in Computer Science thesis, I decided to explore the idea further.</p>
+
+                    <h4>What I wanted to build</h4>
+                    <p>I did not want Nutri-Tsek to show only one score. I wanted users to be able to examine food products from several perspectives.</p>
+                    <p>The application includes:</p>
+                    <ul>
+                        <li>Nutri-Score for overall nutritional quality</li>
+                        <li>NOVA classification for the level of food processing</li>
+                        <li>Nøglehullet assessment based on Nordic nutrition criteria</li>
+                        <li>Traffic-light indicators for fat, saturated fat, sugars, and salt</li>
+                        <li>Product comparison</li>
+                        <li>Suggested alternatives based on available product data</li>
+                        <li>Calorie and consumption tracking</li>
+                        <li>Personal goals and recommendations</li>
+                    </ul>
+                    <p>Users can scan a barcode or search for a product by name. Guest users can access basic product information, evaluation results, comparison features, and feedback submission. Registered users can access additional personalised features.</p>
+
+                    <h4>What made the project challenging</h4>
+                    <p>Building Nutri-Tsek was not only about writing code.</p>
+                    <p>Food-product information can be incomplete, inconsistent, or different between data sources. I had to think carefully about how the application should respond when nutrition values, ingredients, or classification details were unavailable.</p>
+                    <p>I also learned to be careful with the language used in the system. The application should not tell users that a product is always “good,” “bad,” or medically better for them. The results need to be presented neutrally, explained responsibly, and based only on the available product data.</p>
+                    <p>The project required me to work with:</p>
+                    <ul>
+                        <li>Frontend and backend development</li>
+                        <li>REST APIs and databases</li>
+                        <li>Authentication and password recovery</li>
+                        <li>Mobile barcode scanning</li>
+                        <li>Nutritional algorithms and rule-based processing</li>
+                        <li>Cloud deployment</li>
+                        <li>Testing and user feedback</li>
+                        <li>Academic research and documentation</li>
+                        <li>Application maintenance and version releases</li>
+                    </ul>
+
+                    <h4>What I learned</h4>
+                    <p>Nutri-Tsek helped me understand that building software involves much more than implementation.</p>
+                    <p>I had to gather and define requirements, study nutrition-classification methods, design the system architecture and database, create the user interface, implement the business logic, test different cases, deploy the application, listen to feedback, and continue maintaining it.</p>
+                    <p>The project also taught me that a technically working application can still need improvement. Users may misunderstand the wording, struggle with a feature, or expect something different from what I originally planned.</p>
+                    <p>Because of that, I continued revising the system instead of treating the first working version as finished.</p>
+                    <p>Nutri-Tsek is my largest project so far. It represents my Computer Science studies, my interest in solving practical problems, and my experience turning a personal idea into a complete web and mobile application.</p>
+                    <p>A Danish speaking topic and a food-scanning experience in Switzerland inspired me to explore how software could make food information easier to understand.</p>
                 </article>
 
-                <!-- Sales Inventory App (dynamic) -->
-                <article class="project-card" role="listitem">
-                    <header><h3>📦 Sales Inventory App — Dynamic (React + Express + PostgreSQL)</h3></header>
-                    <p>Full-stack inventory and sales tracking with auto stock deduction, weekly charts, and low-stock alerts. Deployment is paused to harden the backend and CI pipeline; running locally during refinement.</p>
-                    <div class="project-meta">
-                    <strong>Frontend:</strong> React, Vite, Tailwind CSS, Axios<br>
-                    <strong>Backend:</strong> Node.js, Express, Prisma ORM<br>
-                    <strong>Database:</strong> PostgreSQL<br>
-                    <strong>Deployment:</strong> Firebase (frontend), Render (backend — paused)
-                    </div>
-                </article>
-
-
-                <!-- Siomai Cart Sarap -->
-                <article class="project-card" role="listitem">
-                    <header><h3>🥟 Siomai Cart Sarap — Online Web App</h3></header>
-                    <p>Simple siomai website inspired by small food stalls in the Philippines — a clean, mobile-friendly menu and basic marketing presence.</p>
-                    <div class="project-meta"><strong>Tech:</strong> HTML5, CSS3, JavaScript, Firebase Hosting</div>
-                    <p class="links"><a href="https://siomaisarap2828.web.app/" target="_blank" rel="noopener">Live Demo</a></p>
-                </article>
-
-                <!-- Folder Tree Viewer -->
-                <article class="project-card" role="listitem">
-                    <header><h3>📁 Folder Tree Viewer</h3></header>
-                    <p>A Python tool that generates a clean Mermaid.js diagram of your project’s folder structure. It skips heavy folders like .venv and node_modules for a fast, clear overview of your codebase.</p>
-                    <div class="project-meta"><strong>Tech:</strong> Python 3, Mermaid.js, JSON, VS Code</div>
-                    <p class="links"><a href="https://github.com/GraceDuquiza/Folder_Tree_Viewer/" target="_blank" rel="noopener">GitHub Repo</a></p>
-                </article>
-
-                <!-- Danish Vocab Trainer -->
-                <article class="project-card" role="listitem">
-                    <header><h3>🇩🇰 Danish Vocab Trainer</h3></header>
-                    <p>Web app that helps users improve Danish vocabulary via interactive flashcards and quizzes. Responsive and easy to use on any device.</p>
-                    <div class="project-meta"><strong>Tech:</strong> HTML, CSS, JavaScript, GitHub Pages</div>
-                    <p class="links"><a href="https://graceduquiza.github.io/Danish_Vocab_Trainer/" target="_blank" rel="noopener">Live Demo</a></p>
+                <!-- Danish Vocabulary Trainer -->
+                <article class="project-card project-card--story" role="listitem">
+                    <header><h3>🇩🇰 Danish Vocabulary Trainer</h3></header>
+                    <p><strong>Mobile-friendly Danish vocabulary and grammar learning application</strong></p>
+                    <p><strong>Technologies:</strong> HTML, CSS, JavaScript, GitHub Pages</p>
+                    <p class="links">
+                        <a href="https://graceduquiza.github.io/Danish_Vocab_Trainer/" target="_blank" rel="noopener">Open Live Demo</a>
+                        <a href="https://github.com/GraceDuquiza/Danish_Vocab_Trainer" target="_blank" rel="noopener">GitHub Repository</a>
+                    </p>
+                    <h4>How the idea started</h4>
+                    <p>Learning Danish has been important for my life in Denmark, but remembering vocabulary and understanding grammar were sometimes difficult for me. My notes and learning materials were also stored in different places, so I wanted one application where I could organise and practise what I was learning.</p>
+                    <h4>What I wanted to build</h4>
+                    <p>I wanted to create a simple, mobile-friendly tool for reviewing Danish vocabulary and preparing for language exercises.</p>
+                    <p>The application includes:</p>
+                    <ul>
+                        <li>Study and quiz modes</li>
+                        <li>Danish-to-English and English-to-Danish practice</li>
+                        <li>Vocabulary for verbs, nouns, adjectives, adverbs, and conjunctions</li>
+                        <li>A Danish writing guide</li>
+                        <li>Bilingual Danish-English grammar lessons</li>
+                        <li>Explanations, exercises, and answer keys</li>
+                    </ul>
+                    <h4>What made the project challenging</h4>
+                    <p>The main challenge was organising a large amount of vocabulary and grammar content without making the application confusing.</p>
+                    <p>As the application expanded, I also needed to keep the growing JavaScript files organised and ensure that the lessons remained readable on both computers and mobile devices.</p>
+                    <h4>What I learned</h4>
+                    <p>This project taught me that my own experience as a learner can help me design a more practical application.</p>
+                    <p>It started as a simple vocabulary trainer and gradually expanded as my Danish-learning needs developed. Instead of planning every feature from the beginning, I continued adding new sections based on the difficulties I experienced while studying.</p>
+                    <p>I built the Danish learning tool I needed to review vocabulary, practise through quizzes, and understand grammar more clearly.</p>
                 </article>
 
                 <!-- Sudoku Learn -->
-                <article class="project-card" role="listitem">
+                <article class="project-card project-card--story" role="listitem">
                     <header><h3>🧩 Sudoku Learn</h3></header>
-                    <p>Mobile-friendly Sudoku built with plain HTML/CSS/JS. Includes a difficulty-aware generator, notes (pencil marks), undo/redo, hints, timer, same-number highlight, numpad counters, and hardened CSP.</p>
-                    <div class="project-meta"><strong>Tech:</strong> HTML5, CSS3, JavaScript (ES6+), esbuild, html-minifier-terser, LocalStorage</div>
-                    <p class="links"><a href="https://graceduquiza.github.io/SudokuGame/" target="_blank" rel="noopener">Live Demo</a></p>
+                    <p><strong>Beginner-friendly Sudoku learning and practice application</strong></p>
+                    <p><strong>Technologies:</strong> HTML, CSS, JavaScript, LocalStorage</p>
+                    <p class="links">
+                        <a href="https://graceduquiza.github.io/SudokuGame/" target="_blank" rel="noopener">Live Demo</a>
+                        <a href="https://github.com/GraceDuquiza/SudokuGame" target="_blank" rel="noopener">GitHub Repository</a>
+                    </p>
+                    <h4>How the idea started</h4>
+                    <p>The idea for Sudoku Learn came from both my own interest in Sudoku and my nephew’s school activity.</p>
+                    <p>I have always enjoyed playing Sudoku because I like numbers, patterns, and logical problem-solving. When I learned that my nephew’s school would have a Sudoku challenge, I wanted to help him prepare because he did not yet know how to play.</p>
+                    <p>That inspired me to create a simple application that could help a beginner understand the game and practise step by step.</p>
+                    <h4>What I wanted to build</h4>
+                    <p>I wanted to create a mobile-friendly Sudoku game that could introduce beginners to the basic rules while still being enjoyable for regular players.</p>
+                    <p>The application includes:</p>
+                    <ul>
+                        <li>A beginner-friendly 4×4 board</li>
+                        <li>A standard 9×9 board</li>
+                        <li>Different difficulty levels</li>
+                        <li>Notes or pencil marks</li>
+                        <li>Smart hints</li>
+                        <li>Undo and redo</li>
+                        <li>Optional error checking</li>
+                        <li>Same-number highlighting</li>
+                        <li>Number counters</li>
+                        <li>A timer</li>
+                        <li>Automatic saving and resuming</li>
+                    </ul>
+                    <h4>What made the project challenging</h4>
+                    <p>The main challenge was deciding how much help the application should provide.</p>
+                    <p>I wanted my nephew to understand the game, but I did not want the application to solve everything for him. The hints needed to guide the player while still allowing them to think independently.</p>
+                    <p>I also needed to manage the board, notes, hints, mistakes, timer, and saved progress while keeping the game easy to use on both computers and mobile devices.</p>
+                    <h4>What I learned</h4>
+                    <p>This project helped me practise JavaScript logic, application state management, responsive design, and browser-based data storage using LocalStorage.</p>
+                    <p>It also taught me that a learning tool should support the user without removing the opportunity to think and solve the problem independently.</p>
+                    <p>I combined my own enjoyment of Sudoku with the idea of helping my nephew prepare for a school Sudoku challenge.</p>
+                </article>
+
+                <!-- Folder Tree Viewer -->
+                <article class="project-card project-card--story" role="listitem">
+                    <header><h3>📁 Folder Tree Viewer</h3></header>
+                    <p><strong>Local developer tool for visualising project folder structures</strong></p>
+                    <p><strong>Technologies:</strong> Python, Flask, HTML, JavaScript, Mermaid.js</p>
+                    <p class="links"><a href="https://github.com/GraceDuquiza/Folder_Tree_Viewer" target="_blank" rel="noopener">GitHub Repository</a></p>
+                    <p><em>Folder Tree Viewer runs locally because it reads folders directly from the user’s computer. A public live demo is therefore not required.</em></p>
+                    <h4>How the idea started</h4>
+                    <p>As my applications became larger, I sometimes found it difficult to keep track of all the folders and files in a project.</p>
+                    <p>I wanted a quicker way to understand the complete project structure instead of opening each folder manually. That difficulty inspired me to build Folder Tree Viewer.</p>
+                    <h4>What I wanted to build</h4>
+                    <p>I wanted to create a simple local tool that could read a folder path and turn its structure into a visual Mermaid.js diagram.</p>
+                    <p>The application includes:</p>
+                    <ul>
+                        <li>Local folder-path scanning</li>
+                        <li>Mermaid.js folder diagrams</li>
+                        <li>Four layout directions</li>
+                        <li>Zoom and reset controls</li>
+                        <li>SVG download</li>
+                        <li>Automatic exclusion of large or unnecessary folders such as node_modules, .venv, .git, dist, and build</li>
+                    </ul>
+                    <p>The application runs locally using Python and Flask, so it does not require external hosting.</p>
+                    <h4>What made the project challenging</h4>
+                    <p>The main challenge was reading nested folders and converting them into Mermaid.js syntax while keeping the final diagram understandable.</p>
+                    <p>Large software projects can contain thousands of files, particularly inside dependency, cache, virtual-environment, and build folders. I needed to exclude these directories so the diagram would not become too large or confusing.</p>
+                    <h4>What I learned</h4>
+                    <p>This project taught me that a small difficulty in my own development workflow can become a useful software tool.</p>
+                    <p>It also helped me understand how Python, Flask, HTML, JavaScript, and Mermaid.js can work together within one local application.</p>
+                    <p>I built Folder Tree Viewer because I needed a clearer and faster way to understand the structure of my growing software projects.</p>
+                </article>
+
+                <!-- Online Python Tutor -->
+                <article class="project-card project-card--story" role="listitem">
+                    <header><h3>🐍 Online Python Tutor — Modernised Fork</h3></header>
+                    <p><strong>Modernised fork of an open-source Python code-visualisation tool</strong></p>
+                    <p><strong>Technologies:</strong> Python, JavaScript, HTML, CSS</p>
+                    <p class="links"><a href="https://github.com/GraceDuquiza/OnlinePythonTutor-Py3" target="_blank" rel="noopener">GitHub Repository</a></p>
+                    <h4>How the idea started</h4>
+                    <p>While learning programming, I sometimes found it difficult to understand what was happening inside a program as each line of code was executed.</p>
+                    <p>Online Python Tutor helped by showing how variables, functions, and program execution change step by step. When I explored an existing Python 3 fork, I noticed that parts of the code were outdated and caused compatibility and security concerns on newer systems.</p>
+                    <p>That encouraged me to study the existing codebase and modernise it.</p>
+                    <h4>What I wanted to do</h4>
+                    <p>This was not an application I created from the beginning. It is a fork based on an existing open-source project, so my goal was to improve it while respecting and acknowledging the work of the original authors and previous contributors.</p>
+                    <p>My updates included:</p>
+                    <ul>
+                        <li>Replacing the deprecated imp module with importlib</li>
+                        <li>Fixing regular-expression escape warnings</li>
+                        <li>Removing exposed API keys</li>
+                        <li>Adding a homepage redirect to the visualiser</li>
+                        <li>Verifying compatibility with Python versions 3.6 through 3.14</li>
+                        <li>Retaining the original MIT licence and attribution</li>
+                    </ul>
+                    <h4>What made the project challenging</h4>
+                    <p>The main challenge was working with a large codebase that I did not originally create.</p>
+                    <p>Before making changes, I needed to understand how the existing files and components worked together. I also needed to update the code carefully because changes to older components could affect existing behaviour.</p>
+                    <p>Since this was an open-source fork, it was important to distinguish my contributions from the work of the original creator, previous maintainer, and other contributors.</p>
+                    <h4>What I learned</h4>
+                    <p>This project taught me that software development is not always about building a completely new application.</p>
+                    <p>It can also involve reading unfamiliar code, maintaining an existing system, replacing deprecated components, improving security, and keeping software compatible with newer technology.</p>
+                    <p>It also taught me to describe my contribution honestly and clearly distinguish my improvements from the work of the original creators.</p>
+                    <p>I modernised an existing open-source code visualiser by updating deprecated code, improving security, and testing it with newer Python versions.</p>
+                </article>
+
+                <!-- Siomai Cart Sarap -->
+                <article class="project-card project-card--story" role="listitem">
+                    <header><h3>🥟 Siomai Cart Sarap</h3></header>
+                    <p><strong>Mobile-friendly website for a small food business</strong></p>
+                    <p><strong>Technologies:</strong> HTML, CSS, JavaScript, Firebase Hosting</p>
+                    <p class="links"><a href="https://siomaisarap2828.web.app/" target="_blank" rel="noopener">Open Live Website</a></p>
+                    <h4>How the idea started</h4>
+                    <p>The idea came from my sister’s small siomai business in the Philippines.</p>
+                    <p>I wanted to use what I was learning to give her business a simple online presence where customers could easily find information about its products, locations, and contact details.</p>
+                    <h4>What I wanted to build</h4>
+                    <p>I wanted to create a mobile-friendly website where customers could:</p>
+                    <ul>
+                        <li>View the menu, product descriptions, and prices</li>
+                        <li>See photos of the business and its customers</li>
+                        <li>Find the cart locations and delivery information</li>
+                        <li>Contact the business through Messenger, phone, or email</li>
+                    </ul>
+                    <p>The website presents the business and its products, but it does not process online orders. Customers contact the business directly when they would like to place an order.</p>
+                    <h4>What made the project challenging</h4>
+                    <p>The main challenge was presenting the menu and business information clearly on both computers and mobile phones.</p>
+                    <p>I also needed to organise the product photos, prices, contact details, delivery information, and business locations without making the website confusing.</p>
+                    <h4>What I learned</h4>
+                    <p>This project taught me that a useful website does not always need complicated features.</p>
+                    <p>A simple and clear online presence can already help a small business present its products and make it easier for customers to find the information they need.</p>
+                    <p>I created Siomai Cart Sarap to give my sister’s small business a simple online presence where customers could view the menu and find the information needed to contact the business.</p>
+                </article>
+
+                <!-- Sales and Inventory System -->
+                <article class="project-card project-card--story" role="listitem">
+                    <header><h3>📦 Sales and Inventory System</h3></header>
+                    <p><strong>Paused sales and stock-management project for a small business</strong></p>
+                    <p><strong>Technologies:</strong> React, Node.js, PostgreSQL</p>
+                    <p><strong>Status:</strong> Paused — further development and testing are required</p>
+                    <h4>How the idea started</h4>
+                    <p>The idea also came from my sister’s siomai business.</p>
+                    <p>Sales and stock were being monitored manually, which could make it difficult to see what had been sold, how many products were still available, and when supplies needed to be restocked.</p>
+                    <p>I wanted to explore whether a simple software system could make this process easier to manage.</p>
+                    <h4>What I wanted to build</h4>
+                    <p>I started building a system where the business could:</p>
+                    <ul>
+                        <li>Manage products and stock quantities</li>
+                        <li>Record sales</li>
+                        <li>Automatically update the remaining stock</li>
+                        <li>View sales and inventory information in one place</li>
+                    </ul>
+                    <p>I used React for the frontend, Node.js for the backend, and PostgreSQL for the database.</p>
+                    <h4>What made the project challenging</h4>
+                    <p>The main challenge was translating the actual business process into a working software system.</p>
+                    <p>Sales records and stock quantities needed to remain accurate whenever products were added, updated, or sold. The frontend, backend, and database also needed to remain synchronised.</p>
+                    <p>I later paused the project because I needed to prioritise my degree, thesis, and other active projects. The system still requires further development and testing before it can be used by the business.</p>
+                    <h4>What I learned</h4>
+                    <p>This project taught me that a useful idea may still need to be paused when the timing and priorities are not right.</p>
+                    <p>It also helped me understand how frontend, backend, and database components work together when managing connected information such as products, sales, and stock quantities.</p>
+                    <p>I started a sales and inventory system for my sister’s business to explore how software could make manual sales and stock monitoring easier.</p>
                 </article>
                 </div>
             </section>
             <!-- DK -->
-            <section class="lang lang-da hidden">
-                <h2>Projekter</h2>
+            <section class="lang lang-da hidden" aria-labelledby="projects-title-da">
+                <p class="projects-kicker">Udvalgte projekter</p>
+                <h2 id="projects-title-da">Historierne bag mine projekter</h2>
+                <div class="projects-intro">
+                    <p>De fleste af mine projekter begyndte ikke, fordi jeg ønskede at bruge et bestemt programmeringssprog eller framework. De udsprang som regel af noget, jeg selv havde oplevet, noget jeg syntes var svært, eller noget jeg mente kunne gøres lettere ved hjælp af software.</p>
+                    <p>Nogle idéer kom fra mine egne behov, for eksempel at lære dansk eller få overblik over strukturen i et softwareprojekt, der voksede sig større. Andre kom fra min familie, mit studie eller situationer, jeg lagde mærke til i hverdagen.</p>
+                    <p>Når jeg får en idé, begynder jeg som regel med at spørge, hvad det egentlige problem er, og hvem applikationen kan hjælpe. Derefter undersøger jeg emnet, definerer kravene, planlægger funktionerne, bygger en fungerende version, tester den og forbedrer den på baggrund af feedback.</p>
+                    <p>Ikke alle mine projekter er perfekte eller helt færdige. Nogle er stadig under udvikling, mens andre blev sat på pause, da mine prioriteter ændrede sig. Jeg har dem stadig med, fordi hvert projekt repræsenterer noget, jeg har lært, et problem jeg har forsøgt at forstå, eller endnu et skridt i min udvikling som datalogistuderende.</p>
+                    <p>Mine projekter viser ikke kun, hvilke teknologier jeg har brugt, men også hvordan jeg tænker, lærer, løser problemer og omsætter personlige erfaringer til fungerende applikationer.</p>
+                </div>
                 <div class="projects-grid" role="list">
                 <!-- Nutri-Tsek -->
-                <article class="project-card" role="listitem">
-                    <header><h3>🥗 Nutri-Tsek — Ernæringsevalueringsapp</h3></header>
-                    <p>Bachelorprojekt: en mobilbaseret ernæringsapp, der hjælper brugere med at evaluere pakkede fødevarer via stregkodescanning, Nutri-Score, NOVA-klassifikation, Nøglehullet-vurdering, trafiklysmarkering af næringsstoffer, produktsammenligning, kalorietracking og personlige anbefalinger.</p>
-                    <div class="project-meta">
-                    <strong>Frontend:</strong> Next.js, React, TypeScript, Tailwind CSS, Capacitor Android<br>
-                    <strong>Backend:</strong> ASP.NET Core Web API (.NET 10), JWT-autentificering<br>
-                    <strong>Database:</strong> PostgreSQL, Supabase<br>
-                    <strong>Deployment:</strong> Vercel, Android APK
-                    </div>
+                <article class="project-card project-card--featured" role="listitem">
+                    <header><h3>🥗 Nutri-Tsek</h3></header>
+                    <p><strong>Full-stack web- og Android-applikation til vurdering af fødevarer</strong></p>
+                    <p><strong>Teknologier:</strong> Next.js, React, TypeScript, Tailwind CSS, ASP.NET Core, PostgreSQL, Supabase, Capacitor, Azure og Vercel</p>
                     <p class="links">
-                        <a href="https://nutritsek.duquizaolesen.com" target="_blank" rel="noopener">Live demo</a>
-                        <a href="https://github.com/GraceDuquiza/Nutri-Tsek" target="_blank" rel="noopener">GitHub-repo</a>
-                        <a href="https://github.com/GraceDuquiza/Nutri-Tsek/releases/download/v1.0.4/NutriTsek.v1.0.4.apk" target="_blank" rel="noopener">Download APK</a>
+                        <a href="https://nutritsek.duquizaolesen.com" target="_blank" rel="noopener">Åbn live demo</a>
+                        <a href="https://github.com/GraceDuquiza/Nutri-Tsek" target="_blank" rel="noopener">GitHub-repository</a>
+                        <a href="https://github.com/GraceDuquiza/Nutri-Tsek/releases/download/v1.0.5/NutriTsek.v1.0.5.apk" target="_blank" rel="noopener">Android-udgivelse</a>
                     </p>
+                    <p><em>Webversionen demonstrerer Nutri-Tseks vigtigste funktioner. Stregkodescanning og andre mobilfunktioner kan fungere forskelligt afhængigt af browser og enhed.</em></p>
+
+                    <h4>Sådan opstod idéen</h4>
+                    <p>Idéen til Nutri-Tsek udsprang af to oplevelser.</p>
+                    <p>Da jeg forberedte mig til den mundtlige del af Prøve i Dansk 3 (PD3), var mit emne <em>“Sundhed i Danmark med fokus på nye madvaner.”</em> Arbejdet med emnet fik mig til at tænke mere over fødevarevalg, ernæringsmærker og hvor svært det nogle gange kan være at forstå oplysningerne på fødevareemballage.</p>
+                    <p>En anden vigtig oplevelse fandt sted på en sommerrejse til Schweiz. Jeg var ude at handle med en veninde, da hun scannede en drik med en app og viste mig produktets vurdering. Jeg syntes, det var både nyttigt og interessant, at en app hurtigt kunne forklare oplysninger om en fødevare.</p>
+                    <p>Oplevelsen blev ved med at dukke op i mine tanker. Da jeg senere skulle vælge et emne til mit bachelorprojekt i datalogi, besluttede jeg at undersøge idéen nærmere.</p>
+
+                    <h4>Det ville jeg bygge</h4>
+                    <p>Jeg ønskede ikke, at Nutri-Tsek kun skulle vise én score. Jeg ville give brugerne mulighed for at undersøge fødevarer fra flere forskellige perspektiver.</p>
+                    <p>Applikationen indeholder:</p>
+                    <ul>
+                        <li>Nutri-Score til vurdering af den samlede ernæringsmæssige kvalitet</li>
+                        <li>NOVA-klassifikation af graden af fødevareforarbejdning</li>
+                        <li>Vurdering efter Nøglehullets nordiske ernæringskriterier</li>
+                        <li>Trafiklysmarkering af fedt, mættet fedt, sukker og salt</li>
+                        <li>Sammenligning af produkter</li>
+                        <li>Forslag til alternativer baseret på tilgængelige produktdata</li>
+                        <li>Registrering af kalorier og forbrug</li>
+                        <li>Personlige mål og anbefalinger</li>
+                    </ul>
+                    <p>Brugerne kan scanne en stregkode eller søge efter et produkt ved navn. Gæstebrugere har adgang til grundlæggende produktoplysninger, vurderingsresultater, sammenligningsfunktioner og mulighed for at indsende feedback. Registrerede brugere får adgang til yderligere personlige funktioner.</p>
+
+                    <h4>Det udfordrende ved projektet</h4>
+                    <p>Arbejdet med Nutri-Tsek handlede om meget mere end blot at skrive kode.</p>
+                    <p>Oplysninger om fødevarer kan være ufuldstændige, inkonsistente eller variere mellem forskellige datakilder. Jeg måtte derfor nøje overveje, hvordan applikationen skulle reagere, når næringsværdier, ingredienser eller oplysninger til klassificering manglede.</p>
+                    <p>Jeg lærte også at være omhyggelig med sproget i systemet. Applikationen bør ikke fortælle brugeren, at et produkt altid er “godt”, “dårligt” eller medicinsk set bedre. Resultaterne skal præsenteres neutralt, forklares ansvarligt og udelukkende baseres på de tilgængelige produktdata.</p>
+                    <p>Projektet krævede, at jeg arbejdede med:</p>
+                    <ul>
+                        <li>Frontend- og backendudvikling</li>
+                        <li>REST API'er og databaser</li>
+                        <li>Autentificering og nulstilling af adgangskoder</li>
+                        <li>Stregkodescanning på mobilenheder</li>
+                        <li>Ernæringsalgoritmer og regelbaseret behandling</li>
+                        <li>Clouddeployment</li>
+                        <li>Test og brugerfeedback</li>
+                        <li>Akademisk research og dokumentation</li>
+                        <li>Vedligeholdelse og versionsudgivelser</li>
+                    </ul>
+
+                    <h4>Det lærte jeg</h4>
+                    <p>Nutri-Tsek hjalp mig med at forstå, at softwareudvikling omfatter meget mere end selve implementeringen.</p>
+                    <p>Jeg skulle indsamle og definere krav, undersøge metoder til ernæringsklassifikation, designe systemarkitekturen og databasen, udvikle brugergrænsefladen, implementere forretningslogikken, teste forskellige scenarier, deploye applikationen, lytte til feedback og fortsætte vedligeholdelsen.</p>
+                    <p>Projektet lærte mig også, at en applikation kan fungere teknisk og stadig have brug for forbedringer. Brugerne kan misforstå en formulering, have svært ved en funktion eller forvente noget andet end det, jeg oprindeligt havde planlagt.</p>
+                    <p>Derfor fortsatte jeg med at revidere systemet i stedet for at betragte den første fungerende version som færdig.</p>
+                    <p>Nutri-Tsek er mit største projekt indtil videre. Det repræsenterer mit datalogistudie, min interesse for at løse praktiske problemer og min erfaring med at omsætte en personlig idé til en komplet web- og mobilapplikation.</p>
+                    <p>Et mundtligt danskemne og en oplevelse med at scanne en fødevare i Schweiz inspirerede mig til at undersøge, hvordan software kan gøre information om fødevarer lettere at forstå.</p>
                 </article>
 
-                <!-- Sales Inventory App (dynamic) -->
-                <article class="project-card" role="listitem">
-                    <header><h3>📦 Sales Inventory App — Dynamisk (React + Express + PostgreSQL)</h3></header>
-                    <p>Full-stack lager- og salgssystem med automatisk lagertræk, ugegrafer og lav-lager-advarsler. Deployment er midlertidigt sat på pause for at styrke backend og CI-pipeline; kører lokalt under videre udvikling.</p>
-                    <div class="project-meta">
-                    <strong>Frontend:</strong> React, Vite, Tailwind CSS, Axios<br>
-                    <strong>Backend:</strong> Node.js, Express, Prisma ORM<br>
-                    <strong>Database:</strong> PostgreSQL<br>
-                    <strong>Deployment:</strong> Firebase (frontend), Render (backend — pauseret)
-                    </div>
-                </article>
-
-                <!-- Siomai Cart Sarap -->
-                <article class="project-card" role="listitem">
-                    <header><h3>🥟 Siomai Cart Sarap — Online webapp</h3></header>
-                        <p>Simpelt siomai-website inspireret af små madboder i Filippinerne — mobilvenlig menu og enkel præsentation.</p>
-                        <div class="project-meta"><strong>Teknologi:</strong> HTML5, CSS3, JavaScript, Firebase Hosting</div>
-                        <p class="links"><a href="https://siomaisarap2828.web.app/" target="_blank" rel="noopener">Live demo</a></p>
-                    </article>
-
-    
-                <!-- Folder Tree Viewer -->
-                <article class="project-card" role="listitem">
-                    <header><h3>📁 Folder Tree Viewer</h3></header>
-                    <p>Et Python-værktøj, der laver et klart Mermaid.js-diagram over projektets mappe­struktur. Det springer tunge mapper som .venv og node_modules over for et hurtigt og overskueligt overblik.</p>
-                    <div class="project-meta"><strong>Teknologi:</strong> Python 3, Mermaid.js, JSON, VS Code</div>
-                    <p class="links"><a href="https://github.com/GraceDuquiza/Folder_Tree_Viewer/" target="_blank" rel="noopener">GitHub-repo</a></p>
-                </article>
-
-                <!-- Danish Vocab Trainer -->
-                <article class="project-card" role="listitem">
-                    <header><h3>🇩🇰 Dansk Vocab Trainer</h3></header>
-                    <p>Webapp der hjælper med at styrke dansk ordforråd via interaktive flashcards og quizzer. Responsiv og nem at bruge på alle enheder.</p>
-                    <div class="project-meta"><strong>Teknologi:</strong> HTML, CSS, JavaScript, GitHub Pages</div>
-                    <p class="links"><a href="https://graceduquiza.github.io/Danish_Vocab_Trainer/" target="_blank" rel="noopener">Live demo</a></p>
+                <!-- Danish Vocabulary Trainer -->
+                <article class="project-card project-card--story" role="listitem">
+                    <header><h3>🇩🇰 Dansk ordforrådstræner</h3></header>
+                    <p><strong>Mobilvenlig applikation til at lære dansk ordforråd og grammatik</strong></p>
+                    <p><strong>Teknologier:</strong> HTML, CSS, JavaScript, GitHub Pages</p>
+                    <p class="links">
+                        <a href="https://graceduquiza.github.io/Danish_Vocab_Trainer/" target="_blank" rel="noopener">Åbn live demo</a>
+                        <a href="https://github.com/GraceDuquiza/Danish_Vocab_Trainer" target="_blank" rel="noopener">GitHub-repository</a>
+                    </p>
+                    <h4>Sådan opstod idéen</h4>
+                    <p>Det har været vigtigt for mit liv i Danmark at lære dansk, men jeg havde nogle gange svært ved at huske ord og forstå grammatikken. Mine noter og undervisningsmaterialer lå desuden flere forskellige steder, så jeg ønskede én applikation, hvor jeg kunne samle og øve det, jeg lærte.</p>
+                    <h4>Det ville jeg bygge</h4>
+                    <p>Jeg ville skabe et enkelt og mobilvenligt værktøj til at repetere dansk ordforråd og forberede mig til sprogøvelser.</p>
+                    <p>Applikationen indeholder:</p>
+                    <ul>
+                        <li>Studie- og quizfunktioner</li>
+                        <li>Øvelser fra dansk til engelsk og fra engelsk til dansk</li>
+                        <li>Ordforråd med verber, substantiver, adjektiver, adverbier og konjunktioner</li>
+                        <li>En guide til skriftligt dansk</li>
+                        <li>Tosprogede grammatiklektioner på dansk og engelsk</li>
+                        <li>Forklaringer, øvelser og facitlister</li>
+                    </ul>
+                    <h4>Det udfordrende ved projektet</h4>
+                    <p>Den største udfordring var at organisere en stor mængde ordforråd og grammatik uden at gøre applikationen uoverskuelig.</p>
+                    <p>Efterhånden som applikationen voksede, skulle jeg også holde de stadig større JavaScript-filer organiserede og sikre, at lektionerne var lette at læse på både computer og mobil.</p>
+                    <h4>Det lærte jeg</h4>
+                    <p>Projektet lærte mig, at mine egne erfaringer som sprogstuderende kan hjælpe mig med at designe en mere praktisk applikation.</p>
+                    <p>Det begyndte som en enkel ordforrådstræner og voksede gradvist i takt med mine behov. I stedet for at planlægge alle funktioner fra begyndelsen tilføjede jeg løbende nye afsnit ud fra de udfordringer, jeg oplevede under mine studier.</p>
+                    <p>Jeg byggede det danskværktøj, jeg selv havde brug for til at repetere ord, øve mig med quizzer og forstå grammatikken bedre.</p>
                 </article>
 
                 <!-- Sudoku Learn -->
-                <article class="project-card" role="listitem">
+                <article class="project-card project-card--story" role="listitem">
                     <header><h3>🧩 Sudoku Learn</h3></header>
-                    <p>Mobilvenligt Sudoku bygget i ren HTML/CSS/JS. Indeholder sværhedsgradstyret generator, noter, fortryd/gør om, hints, timer, fremhævning af samme tal, numpad-tællere og stram CSP.</p>
-                    <div class="project-meta"><strong>Teknologi:</strong> HTML5, CSS3, JavaScript (ES6+), esbuild, html-minifier-terser, LocalStorage</div>
-                    <p class="links"><a href="https://graceduquiza.github.io/SudokuGame/" target="_blank" rel="noopener">Live demo</a></p>
+                    <p><strong>Begyndervenlig applikation til at lære og øve sudoku</strong></p>
+                    <p><strong>Teknologier:</strong> HTML, CSS, JavaScript, LocalStorage</p>
+                    <p class="links">
+                        <a href="https://graceduquiza.github.io/SudokuGame/" target="_blank" rel="noopener">Live demo</a>
+                        <a href="https://github.com/GraceDuquiza/SudokuGame" target="_blank" rel="noopener">GitHub-repository</a>
+                    </p>
+                    <h4>Sådan opstod idéen</h4>
+                    <p>Idéen til Sudoku Learn udsprang både af min egen interesse for sudoku og af en aktivitet på min nevøs skole.</p>
+                    <p>Jeg har altid været glad for sudoku, fordi jeg kan lide tal, mønstre og logisk problemløsning. Da jeg hørte, at min nevøs skole skulle afholde en sudokukonkurrence, ville jeg hjælpe ham med at forberede sig, fordi han endnu ikke kendte spillet.</p>
+                    <p>Det inspirerede mig til at skabe en enkel applikation, der kunne hjælpe en begynder med at forstå spillet og øve sig trin for trin.</p>
+                    <h4>Det ville jeg bygge</h4>
+                    <p>Jeg ville skabe et mobilvenligt sudokuspil, som kunne introducere begyndere til de grundlæggende regler og samtidig være underholdende for erfarne spillere.</p>
+                    <p>Applikationen indeholder:</p>
+                    <ul>
+                        <li>Et begyndervenligt 4×4-bræt</li>
+                        <li>Et almindeligt 9×9-bræt</li>
+                        <li>Forskellige sværhedsgrader</li>
+                        <li>Noter eller blyantsmarkeringer</li>
+                        <li>Intelligente hints</li>
+                        <li>Fortryd og gentag</li>
+                        <li>Valgfri fejlkontrol</li>
+                        <li>Fremhævning af ens tal</li>
+                        <li>Taltællere</li>
+                        <li>En timer</li>
+                        <li>Automatisk lagring og genoptagelse</li>
+                    </ul>
+                    <h4>Det udfordrende ved projektet</h4>
+                    <p>Den største udfordring var at afgøre, hvor meget hjælp applikationen skulle give.</p>
+                    <p>Jeg ville hjælpe min nevø med at forstå spillet uden at lade applikationen løse alt for ham. Hintene skulle vejlede spilleren og samtidig give plads til selvstændig tænkning.</p>
+                    <p>Jeg skulle desuden håndtere spillebrættet, noter, hints, fejl, timer og gemte fremskridt, mens spillet fortsat skulle være nemt at bruge på både computer og mobil.</p>
+                    <h4>Det lærte jeg</h4>
+                    <p>Projektet gav mig praktisk erfaring med JavaScript-logik, tilstandsstyring, responsivt design og browserbaseret datalagring med LocalStorage.</p>
+                    <p>Jeg lærte også, at et læringsværktøj skal støtte brugeren uden at fjerne muligheden for selv at tænke og løse problemet.</p>
+                    <p>Jeg kombinerede min egen glæde ved sudoku med ønsket om at hjælpe min nevø med at forberede sig til skolens sudokukonkurrence.</p>
+                </article>
+
+                <!-- Folder Tree Viewer -->
+                <article class="project-card project-card--story" role="listitem">
+                    <header><h3>📁 Folder Tree Viewer</h3></header>
+                    <p><strong>Lokalt udviklerværktøj til visualisering af projektmapper</strong></p>
+                    <p><strong>Teknologier:</strong> Python, Flask, HTML, JavaScript, Mermaid.js</p>
+                    <p class="links"><a href="https://github.com/GraceDuquiza/Folder_Tree_Viewer" target="_blank" rel="noopener">GitHub-repository</a></p>
+                    <p><em>Folder Tree Viewer kører lokalt, fordi værktøjet læser mapper direkte fra brugerens computer. Derfor er en offentlig live demo ikke nødvendig.</em></p>
+                    <h4>Sådan opstod idéen</h4>
+                    <p>Efterhånden som mine applikationer blev større, havde jeg nogle gange svært ved at bevare overblikket over alle mapper og filer i et projekt.</p>
+                    <p>Jeg ønskede en hurtigere måde at forstå hele projektstrukturen på uden at åbne hver enkelt mappe manuelt. Det inspirerede mig til at bygge Folder Tree Viewer.</p>
+                    <h4>Det ville jeg bygge</h4>
+                    <p>Jeg ville skabe et enkelt lokalt værktøj, der kunne læse en mappesti og omdanne strukturen til et visuelt Mermaid.js-diagram.</p>
+                    <p>Applikationen indeholder:</p>
+                    <ul>
+                        <li>Lokal scanning af mappestier</li>
+                        <li>Mappediagrammer med Mermaid.js</li>
+                        <li>Fire layoutretninger</li>
+                        <li>Zoom- og nulstillingsfunktioner</li>
+                        <li>Download som SVG</li>
+                        <li>Automatisk udelukkelse af store eller unødvendige mapper som node_modules, .venv, .git, dist og build</li>
+                    </ul>
+                    <p>Applikationen kører lokalt med Python og Flask og kræver derfor ikke ekstern hosting.</p>
+                    <h4>Det udfordrende ved projektet</h4>
+                    <p>Den største udfordring var at læse indlejrede mapper og konvertere dem til Mermaid.js-syntaks, samtidig med at det endelige diagram forblev overskueligt.</p>
+                    <p>Store softwareprojekter kan indeholde tusindvis af filer, især i mapper med afhængigheder, cache, virtuelle miljøer og builds. Jeg måtte udelukke disse mapper, så diagrammet ikke blev for stort eller forvirrende.</p>
+                    <h4>Det lærte jeg</h4>
+                    <p>Projektet lærte mig, at en lille udfordring i min egen arbejdsgang kan blive til et nyttigt softwareværktøj.</p>
+                    <p>Det gav mig også en bedre forståelse af, hvordan Python, Flask, HTML, JavaScript og Mermaid.js kan arbejde sammen i én lokal applikation.</p>
+                    <p>Jeg byggede Folder Tree Viewer, fordi jeg havde brug for en tydeligere og hurtigere måde at forstå strukturen i mine voksende softwareprojekter.</p>
+                </article>
+
+                <!-- Online Python Tutor -->
+                <article class="project-card project-card--story" role="listitem">
+                    <header><h3>🐍 Online Python Tutor — Moderniseret fork</h3></header>
+                    <p><strong>Moderniseret fork af et open source-værktøj til visualisering af Python-kode</strong></p>
+                    <p><strong>Teknologier:</strong> Python, JavaScript, HTML, CSS</p>
+                    <p class="links"><a href="https://github.com/GraceDuquiza/OnlinePythonTutor-Py3" target="_blank" rel="noopener">GitHub-repository</a></p>
+                    <h4>Sådan opstod idéen</h4>
+                    <p>Da jeg lærte at programmere, havde jeg nogle gange svært ved at forstå, hvad der skete inde i et program, mens hver kodelinje blev udført.</p>
+                    <p>Online Python Tutor hjalp ved trin for trin at vise, hvordan variabler, funktioner og programafvikling ændrer sig. Da jeg undersøgte en eksisterende Python 3-fork, opdagede jeg, at dele af koden var forældede og gav kompatibilitets- og sikkerhedsproblemer på nyere systemer.</p>
+                    <p>Det motiverede mig til at sætte mig ind i den eksisterende kodebase og modernisere den.</p>
+                    <h4>Det ville jeg gøre</h4>
+                    <p>Dette er ikke en applikation, jeg har skabt fra bunden. Det er en fork af et eksisterende open source-projekt, og mit mål var at forbedre det med respekt og tydelig anerkendelse af de oprindelige udviklere og tidligere bidragydere.</p>
+                    <p>Mine ændringer omfattede:</p>
+                    <ul>
+                        <li>Udskiftning af det forældede imp-modul med importlib</li>
+                        <li>Rettelse af escape-advarsler i regulære udtryk</li>
+                        <li>Fjernelse af eksponerede API-nøgler</li>
+                        <li>Tilføjelse af en omdirigering fra forsiden til visualiseringsværktøjet</li>
+                        <li>Kontrol af kompatibilitet med Python 3.6 til 3.14</li>
+                        <li>Bevarelse af den oprindelige MIT-licens og kreditering</li>
+                    </ul>
+                    <h4>Det udfordrende ved projektet</h4>
+                    <p>Den største udfordring var at arbejde med en stor kodebase, som jeg ikke selv havde skabt.</p>
+                    <p>Før jeg ændrede noget, skulle jeg forstå, hvordan de eksisterende filer og komponenter hang sammen. Jeg måtte også opdatere koden forsigtigt, fordi ændringer i ældre komponenter kunne påvirke den eksisterende funktionalitet.</p>
+                    <p>Da projektet er en open source-fork, var det vigtigt tydeligt at skelne mellem mine bidrag og arbejdet fra den oprindelige udvikler, den tidligere vedligeholder og andre bidragydere.</p>
+                    <h4>Det lærte jeg</h4>
+                    <p>Projektet lærte mig, at softwareudvikling ikke altid handler om at bygge en helt ny applikation.</p>
+                    <p>Det kan også handle om at læse ukendt kode, vedligeholde et eksisterende system, erstatte forældede komponenter, forbedre sikkerheden og sikre kompatibilitet med nyere teknologi.</p>
+                    <p>Jeg lærte også at beskrive mit bidrag ærligt og tydeligt skelne mine forbedringer fra de oprindelige udvikleres arbejde.</p>
+                    <p>Jeg moderniserede et eksisterende open source-værktøj til kodevisualisering ved at opdatere forældet kode, forbedre sikkerheden og teste det med nyere Python-versioner.</p>
+                </article>
+
+                <!-- Siomai Cart Sarap -->
+                <article class="project-card project-card--story" role="listitem">
+                    <header><h3>🥟 Siomai Cart Sarap</h3></header>
+                    <p><strong>Mobilvenlig hjemmeside til en lille fødevarevirksomhed</strong></p>
+                    <p><strong>Teknologier:</strong> HTML, CSS, JavaScript, Firebase Hosting</p>
+                    <p class="links"><a href="https://siomaisarap2828.web.app/" target="_blank" rel="noopener">Åbn hjemmesiden</a></p>
+                    <h4>Sådan opstod idéen</h4>
+                    <p>Idéen kom fra min søsters lille siomai-virksomhed i Filippinerne.</p>
+                    <p>Jeg ville bruge det, jeg lærte, til at give virksomheden en enkel online tilstedeværelse, hvor kunderne let kunne finde oplysninger om produkter, salgssteder og kontaktmuligheder.</p>
+                    <h4>Det ville jeg bygge</h4>
+                    <p>Jeg ville skabe en mobilvenlig hjemmeside, hvor kunderne kunne:</p>
+                    <ul>
+                        <li>Se menu, produktbeskrivelser og priser</li>
+                        <li>Se billeder af virksomheden og dens kunder</li>
+                        <li>Finde salgsvognenes placeringer og leveringsoplysninger</li>
+                        <li>Kontakte virksomheden via Messenger, telefon eller e-mail</li>
+                    </ul>
+                    <p>Hjemmesiden præsenterer virksomheden og dens produkter, men behandler ikke onlinebestillinger. Kunderne kontakter virksomheden direkte, når de ønsker at bestille.</p>
+                    <h4>Det udfordrende ved projektet</h4>
+                    <p>Den største udfordring var at præsentere menuen og virksomhedsoplysningerne tydeligt på både computer og mobil.</p>
+                    <p>Jeg skulle også organisere produktbilleder, priser, kontaktoplysninger, leveringsinformation og salgssteder uden at gøre hjemmesiden uoverskuelig.</p>
+                    <h4>Det lærte jeg</h4>
+                    <p>Projektet lærte mig, at en nyttig hjemmeside ikke altid behøver komplicerede funktioner.</p>
+                    <p>En enkel og tydelig online tilstedeværelse kan allerede hjælpe en lille virksomhed med at præsentere sine produkter og gøre det lettere for kunderne at finde de oplysninger, de har brug for.</p>
+                    <p>Jeg skabte Siomai Cart Sarap for at give min søsters lille virksomhed en enkel online tilstedeværelse, hvor kunderne kunne se menuen og finde de nødvendige kontaktoplysninger.</p>
+                </article>
+
+                <!-- Sales and Inventory System -->
+                <article class="project-card project-card--story" role="listitem">
+                    <header><h3>📦 Salgs- og lagersystem</h3></header>
+                    <p><strong>Sat på pause: projekt til salgs- og lagerstyring for en lille virksomhed</strong></p>
+                    <p><strong>Teknologier:</strong> React, Node.js, PostgreSQL</p>
+                    <p><strong>Status:</strong> Sat på pause — yderligere udvikling og test er nødvendig</p>
+                    <h4>Sådan opstod idéen</h4>
+                    <p>Denne idé kom også fra min søsters siomai-virksomhed.</p>
+                    <p>Salg og lager blev registreret manuelt, hvilket kunne gøre det svært at se, hvad der var solgt, hvor mange varer der var tilbage, og hvornår lageret skulle fyldes op.</p>
+                    <p>Jeg ville undersøge, om et enkelt softwaresystem kunne gøre processen lettere at styre.</p>
+                    <h4>Det ville jeg bygge</h4>
+                    <p>Jeg begyndte at bygge et system, hvor virksomheden kunne:</p>
+                    <ul>
+                        <li>Administrere produkter og lagerbeholdning</li>
+                        <li>Registrere salg</li>
+                        <li>Opdatere den resterende lagerbeholdning automatisk</li>
+                        <li>Se salgs- og lageroplysninger samlet ét sted</li>
+                    </ul>
+                    <p>Jeg brugte React til frontend, Node.js til backend og PostgreSQL som database.</p>
+                    <h4>Det udfordrende ved projektet</h4>
+                    <p>Den største udfordring var at omsætte virksomhedens faktiske arbejdsgang til et fungerende softwaresystem.</p>
+                    <p>Salgsregistreringer og lagerantal skulle forblive korrekte, når produkter blev tilføjet, opdateret eller solgt. Frontend, backend og database skulle samtidig holdes synkroniserede.</p>
+                    <p>Jeg satte senere projektet på pause for at prioritere min uddannelse, mit bachelorprojekt og andre aktive projekter. Systemet kræver stadig yderligere udvikling og test, før virksomheden kan tage det i brug.</p>
+                    <h4>Det lærte jeg</h4>
+                    <p>Projektet lærte mig, at en nyttig idé godt kan være nødt til at vente, hvis tidspunktet og prioriteterne ikke passer.</p>
+                    <p>Det gav mig også en bedre forståelse af, hvordan frontend, backend og database arbejder sammen om forbundne oplysninger som produkter, salg og lagerantal.</p>
+                    <p>Jeg begyndte på salgs- og lagersystemet for min søsters virksomhed for at undersøge, hvordan software kunne gøre manuel registrering af salg og lager lettere.</p>
                 </article>
                 </div>
             </section>
+            </div>
+        </section>
+
+        <!-- ===== Experience ===== -->
+        <section id="experience" class="section">
+            <div class="container">
+                <section class="lang lang-en" aria-labelledby="experience-title-en">
+                    <p class="experience-kicker">Professional journey</p>
+                    <h2 id="experience-title-en">Experience</h2>
+                    <p class="experience-lead">
+                        My professional background includes research, hospitality, retail, customer service, cosmetics, and
+                        cultural-exchange experience across several countries. These roles have strengthened my technical
+                        abilities, communication skills, adaptability, responsibility, and ability to work with people from
+                        different backgrounds.
+                    </p>
+                    <dl class="experience-highlights" aria-label="Experience overview">
+                        <div><dt>4 countries</dt><dd>International work and cultural experience</dd></div>
+                        <div><dt>9+ years</dt><dd>Customer-facing and operational experience</dd></div>
+                        <div><dt>Research</dt><dd>Data analysis and peer-reviewed publication</dd></div>
+                    </dl>
+
+                    <article>
+                        <h3>Data Analyst Intern — Remote</h3>
+                        <p><strong>Johannes Gutenberg University Mainz</strong><br>April 2025 – July 2025 · Mainz, Germany</p>
+                        <p>
+                            I worked with UK Biobank data to investigate the relationship between PM2.5 air-pollution exposure
+                            and blood and cardiovascular biomarkers.
+                        </p>
+                        <p>My responsibilities included:</p>
+                        <ul>
+                            <li>Cleaning and preparing research datasets</li>
+                            <li>Analysing data using Python, Pandas, NumPy, and SciPy</li>
+                            <li>Creating tables and data visualisations with Matplotlib</li>
+                            <li>Supporting statistical analysis and modelling</li>
+                            <li>Organising the analysis in Jupyter Notebooks</li>
+                            <li>Using Markdown to document the code, methods, and findings</li>
+                            <li>Presenting results while collaborating with an international research team</li>
+                        </ul>
+                        <p>
+                            The work contributed to the peer-reviewed research publication
+                            <a href="https://rjeec.ro/Read/298?id=Ambient%20PM2.5%20exposure%20is%20linked%20to%20elevated%20platelet%20count%20and%20reduced%20serum%20creatinine%3A%20a%20cross-sectional%20study%20in%20the%20UK%20Biobank" target="_blank" rel="noopener noreferrer"><cite>Ambient PM2.5 exposure is linked to elevated platelet count and reduced serum creatinine: a cross-sectional study in the UK Biobank</cite></a>.
+                        </p>
+                        <p><strong>Technologies and tools:</strong> Python, Jupyter Notebook, Markdown, Pandas, NumPy, SciPy, and Matplotlib</p>
+                    </article>
+
+                    <article>
+                        <h3>Housekeeping Staff — Part-Time</h3>
+                        <p><strong>Scandic Aarhus City</strong><br>February 2024 – Present · Aarhus, Denmark</p>
+                        <p>I currently work part-time at Scandic Aarhus City while completing my Bachelor of Science in Computer Science.</p>
+                        <p>
+                            I maintain high standards of cleanliness, hygiene, and safety in a fast-paced hotel environment.
+                            The role requires attention to detail, reliability, time management, and the ability to work
+                            efficiently while following established quality standards.
+                        </p>
+                        <p>
+                            Balancing this role with my university studies, thesis, and software projects has also strengthened
+                            my discipline and ability to manage several priorities.
+                        </p>
+                    </article>
+
+                    <article>
+                        <h3>Customer-Facing Operations Roles</h3>
+                        <p><strong>Retail, Hospitality, and Cosmetics</strong><br>2010 – 2024 · Philippines, UAE, and Denmark</p>
+                        <p>Before focusing on Computer Science, I gained experience in customer-facing roles including:</p>
+                        <ul>
+                            <li>Sales Consultant</li>
+                            <li>Cashier</li>
+                            <li>Beauty Advisor</li>
+                        </ul>
+                        <p>
+                            These positions involved assisting customers, supporting daily business operations, maintaining
+                            service quality, and working with colleagues from different cultural backgrounds.
+                        </p>
+                        <p>
+                            This experience strengthened my communication, customer-service awareness, teamwork, reliability,
+                            adaptability, and ability to remain professional in busy working environments.
+                        </p>
+                    </article>
+
+                    <article>
+                        <h3>Au Pair — Cultural Exchange</h3>
+                        <p><strong>Risskov, Denmark</strong><br>November 2019 – October 2021</p>
+                        <p>
+                            I participated in a cultural-exchange programme while providing household support and communicating
+                            across different cultural backgrounds.
+                        </p>
+                        <p>
+                            Living in Denmark helped me become more independent, responsible, patient, and adaptable while
+                            adjusting to a new country, culture, and language.
+                        </p>
+                    </article>
+
+                    <article>
+                        <h3>Au Pair — Cultural Exchange</h3>
+                        <p><strong>Egersund, Norway</strong><br>November 2021 – June 2023</p>
+                        <p>I participated in a cultural-exchange programme while providing childcare and household support.</p>
+                        <p>
+                            The experience strengthened my cross-cultural communication, flexibility, patience, and ability to
+                            take responsibility in an unfamiliar environment.
+                        </p>
+                    </article>
+
+                    <p class="experience-summary">
+                        My career path has included different industries and countries, but every role has helped me become more
+                        responsible, adaptable, and prepared to begin my professional career in software engineering.
+                    </p>
+                </section>
+
+                <section class="lang lang-da hidden" aria-labelledby="experience-title-da">
+                    <p class="experience-kicker">Professionel rejse</p>
+                    <h2 id="experience-title-da">Erfaring</h2>
+                    <p class="experience-lead">
+                        Min professionelle baggrund omfatter forskning, hotel- og restaurationsbranchen, detailhandel,
+                        kundeservice, kosmetik og kulturudveksling i flere lande. Disse roller har styrket mine tekniske evner,
+                        kommunikationsevner, tilpasningsevne, ansvarlighed og evne til at arbejde med mennesker med forskellige
+                        baggrunde.
+                    </p>
+                    <dl class="experience-highlights" aria-label="Overblik over erfaring">
+                        <div><dt>4 lande</dt><dd>International arbejds- og kulturudvekslingserfaring</dd></div>
+                        <div><dt>9+ år</dt><dd>Kundevendt og operationel erfaring</dd></div>
+                        <div><dt>Forskning</dt><dd>Dataanalyse og fagfællebedømt publikation</dd></div>
+                    </dl>
+
+                    <article>
+                        <h3>Dataanalytikerpraktikant — Fjernarbejde</h3>
+                        <p><strong>Johannes Gutenberg-Universität Mainz</strong><br>April 2025 – juli 2025 · Mainz, Tyskland</p>
+                        <p>
+                            Jeg arbejdede med data fra UK Biobank for at undersøge sammenhængen mellem eksponering for
+                            PM2.5-luftforurening og blod- og kardiovaskulære biomarkører.
+                        </p>
+                        <p>Mine arbejdsopgaver omfattede:</p>
+                        <ul>
+                            <li>Rensning og klargøring af forskningsdatasæt</li>
+                            <li>Dataanalyse med Python, Pandas, NumPy og SciPy</li>
+                            <li>Udarbejdelse af tabeller og datavisualiseringer med Matplotlib</li>
+                            <li>Understøttelse af statistisk analyse og modellering</li>
+                            <li>Organisering af analysen i Jupyter Notebooks</li>
+                            <li>Brug af Markdown til dokumentation af kode, metoder og resultater</li>
+                            <li>Præsentation af resultater i samarbejde med et internationalt forskningsteam</li>
+                        </ul>
+                        <p>
+                            Arbejdet bidrog til den fagfællebedømte forskningsartikel
+                            <a href="https://rjeec.ro/Read/298?id=Ambient%20PM2.5%20exposure%20is%20linked%20to%20elevated%20platelet%20count%20and%20reduced%20serum%20creatinine%3A%20a%20cross-sectional%20study%20in%20the%20UK%20Biobank" target="_blank" rel="noopener noreferrer"><cite>Ambient PM2.5 exposure is linked to elevated platelet count and reduced serum creatinine: a cross-sectional study in the UK Biobank</cite></a>.
+                        </p>
+                        <p><strong>Teknologier og værktøjer:</strong> Python, Jupyter Notebook, Markdown, Pandas, NumPy, SciPy og Matplotlib</p>
+                    </article>
+
+                    <article>
+                        <h3>Housekeepingmedarbejder — Deltid</h3>
+                        <p><strong>Scandic Aarhus City</strong><br>Februar 2024 – nu · Aarhus, Danmark</p>
+                        <p>Jeg arbejder i øjeblikket deltid på Scandic Aarhus City, mens jeg færdiggør min bacheloruddannelse i datalogi.</p>
+                        <p>
+                            Jeg opretholder høje standarder for renlighed, hygiejne og sikkerhed i et travlt hotelmiljø.
+                            Rollen kræver sans for detaljer, pålidelighed, tidsstyring og evnen til at arbejde effektivt efter
+                            fastlagte kvalitetsstandarder.
+                        </p>
+                        <p>
+                            Kombinationen af dette arbejde med mine universitetsstudier, mit bachelorprojekt og mine
+                            softwareprojekter har også styrket min disciplin og evne til at håndtere flere prioriteter.
+                        </p>
+                    </article>
+
+                    <article>
+                        <h3>Kundevendte driftsroller</h3>
+                        <p><strong>Detailhandel, hotel- og restaurationsbranchen samt kosmetik</strong><br>2010 – 2024 · Filippinerne, UAE og Danmark</p>
+                        <p>Før jeg fokuserede på datalogi, fik jeg erfaring i kundevendte roller som:</p>
+                        <ul>
+                            <li>Salgskonsulent</li>
+                            <li>Kassemedarbejder</li>
+                            <li>Skønhedsrådgiver</li>
+                        </ul>
+                        <p>
+                            Stillingerne omfattede kundebetjening, støtte til den daglige drift, opretholdelse af servicekvalitet
+                            og samarbejde med kolleger med forskellige kulturelle baggrunde.
+                        </p>
+                        <p>
+                            Erfaringen styrkede min kommunikation, serviceforståelse, evne til teamwork, pålidelighed,
+                            tilpasningsevne og evne til at forblive professionel i travle arbejdsmiljøer.
+                        </p>
+                    </article>
+
+                    <article>
+                        <h3>Au pair — Kulturudveksling</h3>
+                        <p><strong>Risskov, Danmark</strong><br>November 2019 – oktober 2021</p>
+                        <p>
+                            Jeg deltog i et kulturudvekslingsprogram, mens jeg hjalp til i hjemmet og kommunikerede på tværs af
+                            forskellige kulturelle baggrunde.
+                        </p>
+                        <p>
+                            Livet i Danmark gjorde mig mere selvstændig, ansvarlig, tålmodig og tilpasningsdygtig, mens jeg
+                            vænnede mig til et nyt land, en ny kultur og et nyt sprog.
+                        </p>
+                    </article>
+
+                    <article>
+                        <h3>Au pair — Kulturudveksling</h3>
+                        <p><strong>Egersund, Norge</strong><br>November 2021 – juni 2023</p>
+                        <p>Jeg deltog i et kulturudvekslingsprogram, mens jeg hjalp med børnepasning og opgaver i hjemmet.</p>
+                        <p>
+                            Erfaringen styrkede min tværkulturelle kommunikation, fleksibilitet, tålmodighed og evne til at tage
+                            ansvar i ukendte omgivelser.
+                        </p>
+                    </article>
+
+                    <p class="experience-summary">
+                        Min karrierevej har omfattet forskellige brancher og lande, men hver rolle har gjort mig mere ansvarlig,
+                        tilpasningsdygtig og klar til at begynde min professionelle karriere inden for softwareudvikling.
+                    </p>
+                </section>
             </div>
         </section>
 
@@ -469,25 +1187,126 @@
         <section id="contact" class="section">
             <div class="container">
             <!-- EN -->
-            <section class="lang lang-en">
-                <h2>Contact</h2>
-                <p>Email: <a href="mailto:duquizagrace03@gmail.com">duquizagrace03@gmail.com</a></p>
+            <section class="lang lang-en" aria-labelledby="contact-title-en">
+                <p class="contact-kicker">Let’s connect</p>
+                <h2 id="contact-title-en">Contact</h2>
+                <p class="contact-intro">
+                    I am open to entry-level or junior opportunities in software engineering and data analysis. You can contact
+                    me directly by email or visit my professional profiles below.
+                </p>
+                <div class="contact-grid">
+                    <a class="contact-card" href="mailto:duquizagrace03@gmail.com">
+                        <span class="contact-icon contact-icon--email" aria-hidden="true">@</span>
+                        <span class="contact-card-content">
+                            <strong>Email</strong>
+                            <span>Best for direct enquiries and opportunities</span>
+                            <span class="contact-action">Send an email →</span>
+                        </span>
+                    </a>
+                    <a class="contact-card" href="https://www.linkedin.com/in/grace-duquiza-olesen-9b3005137" target="_blank" rel="noopener noreferrer">
+                        <span class="contact-icon contact-icon--linkedin" aria-hidden="true">in</span>
+                        <span class="contact-card-content">
+                            <strong>LinkedIn</strong>
+                            <span>View my professional background and connect</span>
+                            <span class="contact-action">Open LinkedIn profile ↗</span>
+                        </span>
+                    </a>
+                    <a class="contact-card" href="https://github.com/GraceDuquiza" target="_blank" rel="noopener noreferrer">
+                        <span class="contact-icon contact-icon--github" aria-hidden="true">&lt;/&gt;</span>
+                        <span class="contact-card-content">
+                            <strong>GitHub</strong>
+                            <span>Explore my repositories and source code</span>
+                            <span class="contact-action">Open GitHub profile ↗</span>
+                        </span>
+                    </a>
+                </div>
             </section>
 
             <!-- DK -->
-            <section class="lang lang-da hidden">
-                <h2>Kontakt</h2>
-                <p>E-mail: <a href="mailto:duquizagrace03@gmail.com">duquizagrace03@gmail.com</a></p>
+            <section class="lang lang-da hidden" aria-labelledby="contact-title-da">
+                <p class="contact-kicker">Lad os tage kontakt</p>
+                <h2 id="contact-title-da">Kontakt</h2>
+                <p class="contact-intro">
+                    Jeg er åben for entry-level eller juniorstillinger inden for softwareudvikling og dataanalyse. Du kan kontakte
+                    mig direkte via e-mail eller besøge mine professionelle profiler nedenfor.
+                </p>
+                <div class="contact-grid">
+                    <a class="contact-card" href="mailto:duquizagrace03@gmail.com">
+                        <span class="contact-icon contact-icon--email" aria-hidden="true">@</span>
+                        <span class="contact-card-content">
+                            <strong>E-mail</strong>
+                            <span>Bedst til direkte henvendelser og jobmuligheder</span>
+                            <span class="contact-action">Send en e-mail →</span>
+                        </span>
+                    </a>
+                    <a class="contact-card" href="https://www.linkedin.com/in/grace-duquiza-olesen-9b3005137" target="_blank" rel="noopener noreferrer">
+                        <span class="contact-icon contact-icon--linkedin" aria-hidden="true">in</span>
+                        <span class="contact-card-content">
+                            <strong>LinkedIn</strong>
+                            <span>Se min professionelle baggrund, og opret forbindelse</span>
+                            <span class="contact-action">Åbn LinkedIn-profil ↗</span>
+                        </span>
+                    </a>
+                    <a class="contact-card" href="https://github.com/GraceDuquiza" target="_blank" rel="noopener noreferrer">
+                        <span class="contact-icon contact-icon--github" aria-hidden="true">&lt;/&gt;</span>
+                        <span class="contact-card-content">
+                            <strong>GitHub</strong>
+                            <span>Se mine repositories og min kildekode</span>
+                            <span class="contact-action">Åbn GitHub-profil ↗</span>
+                        </span>
+                    </a>
+                </div>
             </section>
             </div>
         </section>
         </main>
 
         <footer class="site-footer">
-        <div class="container">
-            <p class="lang lang-en">© 2026 Grace Duquiza Olesen. All rights reserved.</p>
-            <p class="lang lang-da hidden">© 2026 Grace Duquiza Olesen. Alle rettigheder forbeholdes.</p>
-        </div>
+            <div class="container">
+                <div class="footer-main">
+                    <div class="footer-identity">
+                        <a class="footer-name" href="#about">Grace Duquiza Olesen</a>
+                        <p class="lang lang-en">Computer Science student building practical software and data-informed solutions.</p>
+                        <p class="lang lang-da hidden">Datalogistuderende, der udvikler praktisk software og databaserede løsninger.</p>
+                        <p class="footer-location">Aarhus, Denmark</p>
+                    </div>
+
+                    <nav class="footer-navigation" aria-label="Footer navigation">
+                        <p class="footer-heading lang lang-en">Explore</p>
+                        <p class="footer-heading lang lang-da hidden">Udforsk</p>
+                        <ul class="lang lang-en">
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#projects">Projects</a></li>
+                            <li><a href="#experience">Experience</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                        <ul class="lang lang-da hidden">
+                            <li><a href="#about">Om mig</a></li>
+                            <li><a href="#projects">Projekter</a></li>
+                            <li><a href="#experience">Erfaring</a></li>
+                            <li><a href="#contact">Kontakt</a></li>
+                        </ul>
+                    </nav>
+
+                    <div class="footer-connect">
+                        <p class="footer-heading lang lang-en">Connect</p>
+                        <p class="footer-heading lang lang-da hidden">Kontakt</p>
+                        <ul>
+                            <li><a href="mailto:duquizagrace03@gmail.com">Email</a></li>
+                            <li><a href="https://www.linkedin.com/in/grace-duquiza-olesen-9b3005137" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a></li>
+                            <li><a href="https://github.com/GraceDuquiza" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></li>
+                            <li><a href="cv_viewer.html" target="_blank" rel="noopener noreferrer"><span class="lang lang-en">View CV</span><span class="lang lang-da hidden">Se CV</span> <span aria-hidden="true">↗</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <p class="lang lang-en">© 2026 Grace Duquiza Olesen. All rights reserved.</p>
+                    <p class="lang lang-da hidden">© 2026 Grace Duquiza Olesen. Alle rettigheder forbeholdes.</p>
+                    <p class="lang lang-en">Designed and built with accessibility in mind.</p>
+                    <p class="lang lang-da hidden">Designet og udviklet med fokus på tilgængelighed.</p>
+                </div>
+            </div>
         </footer>
 
         <!-- External script only (CSP) -->
@@ -495,5 +1314,3 @@
 
     </body>
 </html>
-
-
