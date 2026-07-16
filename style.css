@@ -366,6 +366,7 @@ strong{ font-weight:700; }
     box-shadow:var(--shadow-1);
 }
 .education-card-secondary{ margin-top:.9rem; }
+.education-card-achievement{ margin-top:.9rem; }
 .section .education-degree{
     margin:0 0 .25rem;
     color:var(--text);
@@ -997,6 +998,17 @@ ul.nav a.is-active{
     box-shadow:0 0 0 1px var(--primary);
 }
 #experience article h3{ margin:.1rem 0 .45rem; font-size:1.18rem; }
+#experience article h4{ margin:.1rem 0 .45rem; font-size:1.08rem; }
+#experience .experience-development{
+    margin-top:2.5rem;
+    padding-top:1.5rem;
+    border-top:1px solid var(--border);
+}
+#experience .experience-development > h3{
+    margin:0 0 1.1rem;
+    color:var(--text);
+    font-size:clamp(1.3rem,2.5vw,1.65rem);
+}
 #experience .experience-summary{
     margin:2.5rem 0 0;
     padding:1.15rem 1.25rem;
@@ -1888,4 +1900,9 @@ body{
         min-height:3rem;
         font-size:.6rem;
     }
+}
+
+.education-card.education-card-achievement{
+    border-left-color:var(--primary);
+    box-shadow:0 14px 34px rgba(8,126,164,.16);
 }
