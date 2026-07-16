@@ -33,7 +33,7 @@
         }
 
         a { color: #075f7c; }
-        a:focus-visible, summary:focus-visible {
+        a:focus-visible {
             outline: 3px solid var(--teal);
             outline-offset: 3px;
         }
@@ -135,28 +135,6 @@
         .cv-link--tree-source { left: 5.59%; top: 49.06%; width: 9.32%; height: 1.11%; }
         .cv-link--publication { left: 69.46%; top: 22.48%; width: 5.84%; height: 1.39%; }
 
-        .text-version {
-            width: min(100%, 900px);
-            margin: 1.5rem auto 0;
-            padding: 1rem 1.15rem;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            box-shadow: 0 8px 24px rgba(7, 26, 53, .08);
-        }
-
-        .text-version summary {
-            color: var(--blue);
-            cursor: pointer;
-            font-weight: 800;
-        }
-
-        .text-content { margin-top: 1.25rem; }
-        .text-content h2 { margin-top: 1.7rem; color: var(--blue); }
-        .text-content h3 { margin-bottom: .2rem; }
-        .text-content p { margin: .35rem 0; }
-        .text-content ul { margin-top: .45rem; }
-
         @media (max-width: 650px) {
             .viewer-header { align-items: flex-start; flex-direction: column; gap: .5rem; }
             .notice { width: 100%; }
@@ -213,77 +191,6 @@
             </div>
         </section>
 
-        <details class="text-version">
-            <summary>Read an accessible text version of the CV</summary>
-            <div class="text-content">
-                <h2>Profile</h2>
-                <p>Junior software engineer and final-year BSc Computer Science student with hands-on experience building and deploying full-stack web and mobile applications, REST APIs, databases, and data-informed solutions. Practical, persistent problem-solver with international experience and a strong focus on software quality and user needs.</p>
-
-                <h2>Key highlights</h2>
-                <ul>
-                    <li>Built and deployed Nutri-Tsek, a full-stack BSc thesis product spanning frontend, backend, database, authentication, mobile barcode scanning, testing, cloud deployment, and maintenance.</li>
-                    <li>Analysed UK Biobank data with Python as a Data Analyst Intern with the Nightingale Project and contributed to a peer-reviewed publication.</li>
-                    <li>Based in Aarhus with full work authorization in Denmark and expected to complete a BSc in Computer Science in 2026.</li>
-                    <li>More than 13 years of international operational and cultural experience across four countries.</li>
-                </ul>
-
-                <h2>Skills</h2>
-                <p><strong>Programming:</strong> C++, Java, Python, JavaScript, and SQL.</p>
-                <p><strong>Frontend:</strong> React, Next.js, HTML, CSS, and Tailwind CSS.</p>
-                <p><strong>Backend and APIs:</strong> ASP.NET Core, Node.js, Express.js, REST APIs, and JWT.</p>
-                <p><strong>Data:</strong> PostgreSQL, Supabase, SQLite, Pandas, NumPy, and SciPy.</p>
-                <p><strong>Tools and cloud:</strong> Git, GitHub, Docker, Azure, Vercel, Firebase, and Capacitor.</p>
-                <p><strong>Languages:</strong> English, Danish (PD3 certified), Hiligaynon, and Tagalog.</p>
-
-                <h2>Soft Skills</h2>
-                <ul>
-                    <li>Practical problem solving</li>
-                    <li>Curiosity and continuous learning</li>
-                    <li>Persistence and responsibility</li>
-                    <li>Adaptability and cross-cultural collaboration</li>
-                </ul>
-
-                <h2>Education</h2>
-                <h3>Bachelor of Science in Computer Science</h3>
-                <p><strong>AMA University Online Education</strong> · 2021–Present · Online</p>
-                <p>Relevant coursework includes Software Engineering, Data Structures and Algorithms, Database Systems, Object-Oriented Programming, Web Development, Machine Learning, and Systems Analysis and Design.</p>
-                <h3>Accountancy Short Course</h3>
-                <p><strong>Filipino Institute UAE</strong> · 2018 · Dubai, UAE</p>
-                <p>Completed the short course with 3rd Honors in Accounting.</p>
-                <h3>Bachelor of Science in Accountancy — Previous Studies</h3>
-                <p><strong>Carlos Hilado Memorial State College</strong> · 2012–2013 · Bacolod City, Philippines</p>
-                <p>Completed one year of the degree programme.</p>
-
-                <h2>Experience</h2>
-                <h3>Data Analyst Intern — Remote</h3>
-                <p><strong>Nightingale Project — Johannes Gutenberg University Mainz</strong> · April–July 2025 · Denmark</p>
-                <ul>
-                    <li>Analysed UK Biobank data on PM2.5 exposure and cardiovascular biomarkers using Python, Pandas, NumPy, and SciPy.</li>
-                    <li>Created visualisations with Matplotlib and Seaborn, documented methods, and collaborated with an international research team.</li>
-                    <li>Co-authored a peer-reviewed publication.</li>
-                </ul>
-                <h3>Housekeeping Staff — Part-Time</h3>
-                <p><strong>Scandic Hotels</strong> · February 2024–Present · Aarhus, Denmark</p>
-                <p>Prepare guest rooms to Scandic standards, replenish amenities, report maintenance concerns, and collaborate with the housekeeping team.</p>
-                <h3>Customer-Facing Operations Roles</h3>
-                <p><strong>Retail, Hospitality, and Cosmetics</strong> · December 2009–October 2019 · Philippines and UAE</p>
-                <p>Progressed through Sales Assistant, Sales Advisor, Cashier, Front Desk Cashier, Sales Consultant, and Beauty Advisor roles in multicultural workplaces.</p>
-
-                <h2>Projects</h2>
-                <ul>
-                    <li><strong>Nutri-Tsek:</strong> Full-stack BSc thesis application built with Next.js, TypeScript, ASP.NET Core, and PostgreSQL.</li>
-                    <li><strong>Online Python Tutor — Modernized Fork:</strong> Open-source maintenance project with compatibility and security improvements.</li>
-                    <li><strong>Danish Vocabulary Trainer:</strong> Mobile-friendly study and quiz application.</li>
-                    <li><strong>Sudoku Learn:</strong> Interactive Sudoku game with a timer, hints, and saved progress.</li>
-                    <li><strong>Folder Tree Viewer:</strong> Flask application that visualises folder structures with Mermaid.js.</li>
-                </ul>
-
-                <h2>Professional development and cultural exchange</h2>
-                <p><strong>Danish Data Science Academy Mentorship Programme:</strong> Mentee, October 2025–June 2026.</p>
-                <p><strong>FVU Danish Language Studies:</strong> CLAVIS, 2024–Present.</p>
-                <p><strong>Au pair:</strong> Risskov, Denmark, November 2019–October 2021; Egersund, Norway, November 2021–June 2023.</p>
-            </div>
-        </details>
     </main>
 
     <script>
