@@ -100,8 +100,8 @@
             display: block;
             width: 100%;
             height: auto;
+            -webkit-user-select: none;
             user-select: none;
-            -webkit-user-drag: none;
         }
 
         .cv-link {
@@ -121,6 +121,19 @@
             outline: 3px solid var(--teal);
             outline-offset: 2px;
         }
+
+        .cv-link--email { left: 23.27%; top: 10.32%; width: 17.45%; height: 1.11%; }
+        .cv-link--phone { left: 45.99%; top: 10.32%; width: 6.35%; height: 1.11%; }
+        .cv-link--portfolio { left: 73.68%; top: 10.32%; width: 5.45%; height: 1.11%; }
+        .cv-link--linkedin { left: 23.27%; top: 11.44%; width: 12.33%; height: 1.11%; }
+        .cv-link--github { left: 40.87%; top: 11.44%; width: 8.31%; height: 1.11%; }
+        .cv-link--nutri-live { left: 5.59%; top: 89.03%; width: 7.07%; height: 1.11%; }
+        .cv-link--nutri-source { left: 14.35%; top: 89.03%; width: 9.32%; height: 1.11%; }
+        .cv-link--tutor-source { left: 5.59%; top: 15.84%; width: 9.32%; height: 1.11%; }
+        .cv-link--vocab-live { left: 5.59%; top: 26.46%; width: 8.22%; height: 1.11%; }
+        .cv-link--sudoku-live { left: 5.59%; top: 37.23%; width: 8.22%; height: 1.11%; }
+        .cv-link--tree-source { left: 5.59%; top: 49.06%; width: 9.32%; height: 1.11%; }
+        .cv-link--publication { left: 69.46%; top: 22.48%; width: 5.84%; height: 1.39%; }
 
         .text-version {
             width: min(100%, 900px);
@@ -175,13 +188,13 @@
                     height="1684"
                     alt="Page 1 of 2 of Grace Duquiza Olesen's CV"
                     draggable="false">
-                <a class="cv-link" href="mailto:duquizagrace03@gmail.com" aria-label="Email Grace Duquiza Olesen" style="left:23.27%;top:10.32%;width:17.45%;height:1.11%"></a>
-                <a class="cv-link" href="tel:71392548" aria-label="Call Grace Duquiza Olesen" style="left:45.99%;top:10.32%;width:6.35%;height:1.11%"></a>
-                <a class="cv-link" href="https://graceduquiza.github.io" target="_blank" rel="noopener noreferrer" aria-label="Open Grace Duquiza Olesen's portfolio" style="left:73.68%;top:10.32%;width:5.45%;height:1.11%"></a>
-                <a class="cv-link" href="https://linkedin.com/in/graceduquizaolesen" target="_blank" rel="noopener noreferrer" aria-label="Open Grace Duquiza Olesen's LinkedIn profile" style="left:23.27%;top:11.44%;width:12.33%;height:1.11%"></a>
-                <a class="cv-link" href="https://github.com/graceduquiza" target="_blank" rel="noopener noreferrer" aria-label="Open Grace Duquiza Olesen's GitHub profile" style="left:40.87%;top:11.44%;width:8.31%;height:1.11%"></a>
-                <a class="cv-link" href="https://nutritsek.duquizaolesen.com" target="_blank" rel="noopener noreferrer" aria-label="Open the Nutri-Tsek live application" style="left:5.59%;top:89.03%;width:7.07%;height:1.11%"></a>
-                <a class="cv-link" href="https://github.com/GraceDuquiza/Nutri-Tsek" target="_blank" rel="noopener noreferrer" aria-label="Open the Nutri-Tsek source code" style="left:14.35%;top:89.03%;width:9.32%;height:1.11%"></a>
+                <a class="cv-link cv-link--email" href="mailto:duquizagrace03@gmail.com" aria-label="Email Grace Duquiza Olesen"></a>
+                <a class="cv-link cv-link--phone" href="tel:71392548" aria-label="Call Grace Duquiza Olesen"></a>
+                <a class="cv-link cv-link--portfolio" href="https://graceduquiza.github.io" target="_blank" rel="noopener noreferrer" aria-label="Open Grace Duquiza Olesen's portfolio"></a>
+                <a class="cv-link cv-link--linkedin" href="https://linkedin.com/in/graceduquizaolesen" target="_blank" rel="noopener noreferrer" aria-label="Open Grace Duquiza Olesen's LinkedIn profile"></a>
+                <a class="cv-link cv-link--github" href="https://github.com/graceduquiza" target="_blank" rel="noopener noreferrer" aria-label="Open Grace Duquiza Olesen's GitHub profile"></a>
+                <a class="cv-link cv-link--nutri-live" href="https://nutritsek.duquizaolesen.com" target="_blank" rel="noopener noreferrer" aria-label="Open the Nutri-Tsek live application"></a>
+                <a class="cv-link cv-link--nutri-source" href="https://github.com/GraceDuquiza/Nutri-Tsek" target="_blank" rel="noopener noreferrer" aria-label="Open the Nutri-Tsek source code"></a>
             </div>
             <div class="cv-page-wrap">
                 <img
@@ -192,11 +205,11 @@
                     alt="Page 2 of 2 of Grace Duquiza Olesen's CV"
                     loading="lazy"
                     draggable="false">
-                <a class="cv-link" href="https://github.com/GraceDuquiza/OnlinePythonTutor-Py3" target="_blank" rel="noopener noreferrer" aria-label="Open the Online Python Tutor source code" style="left:5.59%;top:15.84%;width:9.32%;height:1.11%"></a>
-                <a class="cv-link" href="https://graceduquiza.github.io/Danish_Vocab_Trainer/" target="_blank" rel="noopener noreferrer" aria-label="Open the Danish Vocabulary Trainer live demo" style="left:5.59%;top:26.46%;width:8.22%;height:1.11%"></a>
-                <a class="cv-link" href="https://graceduquiza.github.io/SudokuGame/" target="_blank" rel="noopener noreferrer" aria-label="Open the Sudoku Learn live demo" style="left:5.59%;top:37.23%;width:8.22%;height:1.11%"></a>
-                <a class="cv-link" href="https://github.com/GraceDuquiza/Folder_Tree_Viewer/" target="_blank" rel="noopener noreferrer" aria-label="Open the Folder Tree Viewer source code" style="left:5.59%;top:49.06%;width:9.32%;height:1.11%"></a>
-                <a class="cv-link" href="https://doi.org/10.21698/rjeec.2025.210" target="_blank" rel="noopener noreferrer" aria-label="Open the peer-reviewed publication" style="left:69.46%;top:22.48%;width:5.84%;height:1.39%"></a>
+                <a class="cv-link cv-link--tutor-source" href="https://github.com/GraceDuquiza/OnlinePythonTutor-Py3" target="_blank" rel="noopener noreferrer" aria-label="Open the Online Python Tutor source code"></a>
+                <a class="cv-link cv-link--vocab-live" href="https://graceduquiza.github.io/Danish_Vocab_Trainer/" target="_blank" rel="noopener noreferrer" aria-label="Open the Danish Vocabulary Trainer live demo"></a>
+                <a class="cv-link cv-link--sudoku-live" href="https://graceduquiza.github.io/SudokuGame/" target="_blank" rel="noopener noreferrer" aria-label="Open the Sudoku Learn live demo"></a>
+                <a class="cv-link cv-link--tree-source" href="https://github.com/GraceDuquiza/Folder_Tree_Viewer/" target="_blank" rel="noopener noreferrer" aria-label="Open the Folder Tree Viewer source code"></a>
+                <a class="cv-link cv-link--publication" href="https://doi.org/10.21698/rjeec.2025.210" target="_blank" rel="noopener noreferrer" aria-label="Open the peer-reviewed publication"></a>
             </div>
         </section>
 
