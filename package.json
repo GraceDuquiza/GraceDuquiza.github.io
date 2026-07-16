@@ -9,7 +9,7 @@
     "build:css": "postcss style.css -o docs/style.css",
     "build:html": "html-minifier-terser index.html -o docs/index.html --collapse-whitespace --collapse-boolean-attributes --decode-entities --remove-comments --remove-empty-attributes --remove-redundant-attributes --remove-attribute-quotes --remove-script-type-attributes --remove-style-link-type-attributes --sort-attributes --sort-class-name --use-short-doctype --minify-css true --minify-js true",
     "build:cv": "html-minifier-terser cv_viewer.html -o docs/cv_viewer.html --collapse-whitespace --collapse-boolean-attributes --decode-entities --remove-comments --remove-empty-attributes --remove-redundant-attributes --remove-attribute-quotes --remove-script-type-attributes --remove-style-link-type-attributes --sort-attributes --sort-class-name --use-short-doctype --minify-css true --minify-js true",
-    "build:assets": "shx mkdir -p docs/assets && shx cp assets/grace-portrait.webp docs/assets/ && shx cp -r assets/cv-pages docs/assets/ && shx cp icon192.png docs/ && shx cp Wdata.jpg docs/ || true",
+    "build:assets": "shx mkdir -p docs/assets && shx cp assets/grace-portrait.webp docs/assets/ && shx cp -r assets/cv-pages docs/assets/ && shx cp UpdateCV_GDO.pdf docs/ && shx cp icon192.png docs/ && shx cp Wdata.jpg docs/ || true",
     "build": "npm-run-all -s build:clean build:js build:css build:html build:cv build:assets",
     "preview": "python3 -m http.server 4321 -d docs"
   },

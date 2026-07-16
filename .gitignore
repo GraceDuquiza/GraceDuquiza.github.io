@@ -35,3 +35,8 @@ logs/
 *.synctex.gz
 *.toc
 *.xdv
+
+# Vendored AltaCV dependency (keep only files required to compile this CV)
+AltaCV-main/*
+!AltaCV-main/altacv.cls
+!AltaCV-main/LICENSE.md

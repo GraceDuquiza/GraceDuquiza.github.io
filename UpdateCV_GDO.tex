@@ -1,0 +1,286 @@
+% !TEX TS-program = xelatex
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+
+% -----------------------------------------------------------------------------
+% PACKAGES
+% -----------------------------------------------------------------------------
+\usepackage{paracol} % Two-column layout control
+\usepackage{geometry} % Custom margins
+\usepackage{graphicx} % For profile photo
+\usepackage{enumitem} % Clean item spacing
+
+% Square 2x2-style portrait: crop only the lower edge so the full head remains visible.
+\makeatletter
+\renewcommand{\@makeaphoto}[2]{%
+  \begin{minipage}[c][#1][c]{#1}%
+    \centering
+    \includegraphics[width=#1,height=#1,trim=0 52bp 0 0,clip]{#2}%
+  \end{minipage}%
+}
+\makeatother
+
+% -----------------------------------------------------------------------------
+% PAGE GEOMETRY (Sidebar on LEFT, Main on RIGHT)
+% -----------------------------------------------------------------------------
+\geometry{
+  left=1.1cm,
+  right=1.1cm,
+  top=1.0cm,
+  bottom=1.0cm
+}
+
+% Set column proportions and spacing
+\columnratio{0.33,0.67}   % 33% sidebar, 67% main
+\setlength{\columnsep}{0.9cm} % Gap between sidebar and main column
+
+% -----------------------------------------------------------------------------
+% COLORS
+% -----------------------------------------------------------------------------
+\definecolor{Accent}{HTML}{0A5275}
+\definecolor{Heading}{HTML}{0A5275}
+\definecolor{BodyText}{HTML}{333333}
+
+\colorlet{name}{black}
+\colorlet{tagline}{Accent}
+\colorlet{heading}{Heading}
+\colorlet{accent}{Accent}
+\colorlet{emphasis}{Accent}
+\colorlet{body}{BodyText}
+
+% -----------------------------------------------------------------------------
+% FONTS
+% -----------------------------------------------------------------------------
+\usepackage{fontspec}
+\setsansfont{Cambria}
+\renewcommand{\familydefault}{\sfdefault}
+\sloppy % Prevent overfull lines
+\setlist[itemize]{leftmargin=0.9em,itemsep=1pt,topsep=2pt,parsep=0pt,partopsep=0pt}
+
+% Compact, non-splitting project cards for the narrow sidebar.
+\newcommand{\projectentry}[5]{%
+  \begin{minipage}{\linewidth}
+    \raggedright\hyphenpenalty=10000\exhyphenpenalty=10000
+    {\normalsize\bfseries\color{emphasis}#1\par}
+    \smallskip
+    {\footnotesize\bfseries\color{accent}#2\par}
+    \smallskip
+    {\footnotesize\color{body}\cvDateMarker\hspace{0.45em}#3\par}
+    \smallskip
+    {\small\color{body}#4\par}
+    \smallskip
+    {\footnotesize\bfseries\color{accent}#5\par}
+  \end{minipage}%
+}
+
+% -----------------------------------------------------------------------------
+% HEADER INFO
+% -----------------------------------------------------------------------------
+\name{\fontsize{24pt}{26pt}\selectfont Grace Duquiza Olesen}
+\tagline{BSc Computer Science | Junior Software Engineer}
+\photoL{3.2cm}{GDO.png}
+\personalinfo{
+  \email{duquizagrace03@gmail.com}
+  \phone{71392548}
+  \location{Aarhus, Denmark}
+  \printinfo[portfolio]{\faGlobe}{Portfolio}[https://graceduquiza.github.io]
+  \linkedin{graceduquizaolesen}
+  \github{graceduquiza}
+}
+
+% -----------------------------------------------------------------------------
+\begin{document}
+% -----------------------------------------------------------------------------
+
+\makecvheader % Centered header
+
+% Start 2-column environment
+\begin{paracol}{2}
+% -----------------------------------------------------------------------------
+% LEFT COLUMN (SIDEBAR)
+% -----------------------------------------------------------------------------
+\begin{leftcolumn}
+
+\cvsection{Languages}
+\begin{itemize}
+  \item \textbf{English:} Fluent
+  \item \textbf{Danish:} PD3 certified
+  \item \textbf{Hiligaynon:} Mother tongue
+  \item \textbf{Tagalog:} Native proficiency
+\end{itemize}
+
+\divider
+
+{\renewcommand{\cvsectionfont}{\Large\bfseries}\cvsection{Technical Skills}}
+\begin{itemize}
+  \item \textbf{Programming:} Python, Java, C++, JavaScript, TypeScript, SQL
+  \item \textbf{Frontend:} React, Next.js, HTML, CSS, Tailwind CSS
+  \item \textbf{Backend \& APIs:} ASP.NET Core, Node.js, Express.js, REST APIs, JWT
+  \item \textbf{Data:} PostgreSQL, Supabase, SQLite, Pandas, NumPy, SciPy
+  \item \textbf{Tools \& Cloud:} Git, GitHub, Docker, Azure, Vercel, Firebase, Capacitor
+\end{itemize}
+
+\divider
+
+\cvsection{Soft Skills}
+\begin{itemize}
+  \item Practical Problem Solving
+  \item Curiosity \& Continuous Learning
+  \item Persistence \& Responsibility
+  \item Adaptability \& Cross-Cultural Collaboration
+\end{itemize}
+
+\divider
+
+\cvsection{Honors}
+\cvachievement{\faTrophy}{3rd Honor, Accounting}{Filipino Institute UAE — 2018}
+
+\divider
+
+\cvsection{Projects}
+
+\projectentry
+  {Nutri-Tsek (BSc Thesis)}
+  {Next.js · TypeScript · ASP.NET Core · PostgreSQL}
+  {2026}
+  {Full-stack web and Android application with REST APIs, JWT authentication, barcode scanning, nutrition scoring, and cloud deployment.}
+  {\href{https://nutritsek.duquizaolesen.com}{\faGlobe\ Live app}\quad
+   \href{https://github.com/GraceDuquiza/Nutri-Tsek}{\faGithub\ Source code}}
+
+\divider
+
+\projectentry
+  {Online Python Tutor --- Modernized Fork}
+  {Python · JavaScript · Open-source maintenance}
+  {2025}
+  {Modernized an existing codebase by replacing deprecated modules, removing exposed API keys, resolving warnings, and verifying Python 3.6--3.14 compatibility.}
+  {\href{https://github.com/GraceDuquiza/OnlinePythonTutor-Py3}{\faGithub\ Source code}}
+
+\divider
+
+\projectentry
+  {Danish Vocabulary Trainer}
+  {HTML · CSS · JavaScript}
+  {2025}
+  {Mobile-friendly study and quiz application with bilingual vocabulary, grammar lessons, exercises, and answer keys.}
+  {\href{https://graceduquiza.github.io/Danish_Vocab_Trainer/}{\faGlobe\ Live demo}}
+
+\divider
+
+\projectentry
+  {Sudoku Learn}
+  {JavaScript · Responsive design · LocalStorage}
+  {2025}
+  {Learning-focused game with 4x4/9x9 boards, state management, smart hints, undo/redo, and automatic progress saving.}
+  {\href{https://graceduquiza.github.io/SudokuGame/}{\faGlobe\ Live demo}}
+
+\divider
+
+\projectentry
+  {Folder Tree Viewer}
+  {Python · Flask · Mermaid.js}
+  {2025}
+  {Local developer tool that scans nested folders, filters dependency/build directories, and generates downloadable structure diagrams.}
+  {\href{https://github.com/GraceDuquiza/Folder_Tree_Viewer/}{\faGithub\ Source code}}
+
+
+\end{leftcolumn}
+
+% -----------------------------------------------------------------------------
+% RIGHT COLUMN (MAIN CONTENT)
+% -----------------------------------------------------------------------------
+\begin{rightcolumn}
+
+\cvsection{Profile}
+Junior software engineer and final-year BSc Computer Science student with hands-on experience building and deploying full-stack web/mobile applications, REST APIs, databases, and data-informed solutions. Practical, persistent problem-solver with international experience and a strong focus on software quality and user needs.
+
+\divider
+
+\cvsection{Key Highlights}
+\begin{itemize}
+    \item Built and deployed \textbf{Nutri-Tsek}, a full-stack BSc thesis product spanning frontend, backend, database, authentication, mobile barcode scanning, testing, cloud deployment, and maintenance.
+    \item Data Analyst Intern with the Nightingale Project at Johannes Gutenberg University Mainz; analyzed UK Biobank data with Python and contributed to a peer-reviewed publication.
+    \item Based in Aarhus with full work authorization in Denmark; BSc expected completion in 2026.
+    \item 13+ years of international operational and cultural experience across four countries, bringing adaptability, responsibility, and strong cross-cultural communication.
+\end{itemize}
+
+\divider
+
+% ----------- Education -----------
+\cvsection{Education}
+\cvevent{Bachelor of Science in Computer Science}{AMA University Online Education}{2021 -- Expected completion: 2026}{Quezon City, Philippines (Online)}
+\begin{itemize}
+    \item Coursework: Software Engineering, Data Structures \& Algorithms, Database Systems, OOP, Web Development, Machine Learning, and Systems Analysis \& Design.
+\end{itemize}
+
+\cvevent{Accountancy Short Course}{Filipino Institute UAE}{2018}{Dubai, UAE}
+\begin{itemize}
+    \item Completed the short course with 3rd Honors in Accounting.
+\end{itemize}
+
+\cvevent{Bachelor of Science in Accountancy}{Carlos Hilado Memorial State College}{2012 -- 2013}{Bacolod City, Philippines}
+\begin{itemize}
+    \item Completed one year of the degree program.
+\end{itemize}
+
+\divider
+
+
+% ----------- Work Experience -----------
+\cvsection{Experience}
+
+\cvevent{Housekeeper (part-time)}{Scandic Hotels}{Feb 2024 -- Present}{Aarhus, Denmark}
+\begin{itemize}
+    \item Prepare guest rooms to Scandic standards for cleanliness, hygiene, and presentation; replenish amenities, report maintenance concerns, and collaborate with the housekeeping team.
+\end{itemize}
+
+\divider
+
+\cvevent{Data Analyst Intern (remote)}{Nightingale Project --- Johannes Gutenberg University Mainz}{Apr 2025 -- Jul 2025}{Denmark}
+\begin{itemize}
+    \item Analyzed large-scale UK Biobank health and environmental data using Python, Pandas, NumPy, SciPy, Pearson correlation, and regression.
+    \item Created visualizations with Matplotlib and Seaborn, documented methods, and collaborated with an international research team.
+    \item Co-authored a peer-reviewed publication: \href{https://doi.org/10.21698/rjeec.2025.210}{DOI link}.
+\end{itemize}
+
+\divider
+
+\cvevent{Customer-Facing Operations Roles}{Retail, Hospitality, and Cosmetics}{Dec 2009 -- Oct 2019}{Philippines and UAE}
+\begin{itemize}
+    \item Progressed through Sales Assistant, Sales Advisor, Cashier, Front Desk Cashier, Sales Consultant, and Beauty Advisor roles.
+    \item Supported customers, financial transactions, inventory, displays, and daily operations across multicultural workplaces.
+\end{itemize}
+
+% ----------- Professional Development -----------
+\cvsection{Professional Development}
+
+\cvevent{Mentee}{Danish Data Science Academy (DDSA) Mentorship Programme}{Oct 2025 -- Jun 2026}{Denmark}
+\begin{itemize}
+    \item Selected to develop data science, research, and career-planning skills.
+    \item Participated in mentorship activities and networking with data science professionals.
+\end{itemize}
+
+\cvevent{FVU Danish Language Studies}{CLAVIS}{2024 -- Present}{Denmark}
+\begin{itemize}
+    \item Continue developing Danish-language and workplace communication skills through FVU studies.
+\end{itemize}
+
+
+% ----------- Cultural Exchange -----------
+\cvsection{Cultural Exchange}
+
+\cvevent{Au Pair (Cultural Exchange)}{Egersund, Norway}{Nov 2021 -- Jun 2023}{Norway}
+\begin{itemize}
+    \item Provided childcare and household support while strengthening responsibility, flexibility, and cross-cultural communication.
+\end{itemize}
+
+\divider
+
+\cvevent{Au Pair (Cultural Exchange)}{Risskov, Denmark}{Nov 2019 -- Oct 2021}{Denmark}
+\begin{itemize}
+    \item Provided household support while adapting to a new country, culture, and language.
+\end{itemize}
+
+\end{rightcolumn}
+\end{paracol}
+
+\end{document}
