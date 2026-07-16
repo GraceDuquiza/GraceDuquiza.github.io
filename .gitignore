@@ -21,3 +21,17 @@ logs/
 
 # VS Code (optional - only if you don't want settings tracked)
 .vscode/
+
+# LaTeX temporary files
+.cv-build/
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.xdv
