@@ -1342,23 +1342,23 @@ ul.nav a.is-active{
     background:linear-gradient(100deg,#087ea4,#075f7c);
     box-shadow:0 8px 22px rgba(8,126,164,.3);
 }
-ul.nav a[href="cv_viewer.html"]{
+ul.nav a[href="Update_CV_GDO1.pdf"]{
     color:#e8fbff;
     border-color:rgba(114,231,238,.38);
     background:rgba(114,231,238,.08);
 }
-ul.nav a[href="cv_viewer.html"]::after{
+ul.nav a[href="Update_CV_GDO1.pdf"]::after{
     content:"↗";
     margin-left:.35rem;
     color:#72e7ee;
     font-size:.8em;
 }
-ul.nav a[href="cv_viewer.html"]:hover{
+ul.nav a[href="Update_CV_GDO1.pdf"]:hover{
     color:#031525;
     border-color:#72e7ee;
     background:#72e7ee;
 }
-ul.nav a[href="cv_viewer.html"]:hover::after{ color:#031525; }
+ul.nav a[href="Update_CV_GDO1.pdf"]:hover::after{ color:#031525; }
 .lang-switch{ padding-left:.7rem; border-left:1px solid rgba(255,255,255,.14); }
 .lang-switch button{
     min-width:2.75rem;
@@ -1426,7 +1426,7 @@ ul.nav a[href="cv_viewer.html"]:hover::after{ color:#031525; }
     nav.langbar{ border-radius:0 0 10px 10px; }
     ul.nav{ gap:.25rem; }
     ul.nav a{ padding:.28rem .38rem; font-size:.76rem; }
-    ul.nav a[href="cv_viewer.html"]::after{ display:none; }
+    ul.nav a[href="Update_CV_GDO1.pdf"]::after{ display:none; }
     .lang-switch{ padding-left:.35rem; }
     .brand-row{
         min-height:132px;
